@@ -13,11 +13,24 @@ const Login = () => {
 			"email":email,
 			"password":password
 		}
+		console.log(userData)
 		axios.post(`http://localhost:3005/signin`,
 		userData
-		).then((getData)=>{
-			if(getData.data){
-				navigate('/home')
+		).then((response)=>{
+			console.log(response.data)
+
+			if(response.data.status=="success"){
+				let token=response.data.token
+				let userId=response.data.data[0]._id
+				alert("valid user")
+				alert("usedId"+userId)
+				alert("token"+token)
+
+				sessionStorage.setItem("userToken",token)
+				sessionStorage.setItem("userId",userId)
+
+				navigate('/home2');
+
 			}
 			else{
 				alert("invalid user");
@@ -36,8 +49,7 @@ const Login = () => {
 						placeholder="Email"
 						name="email"
 						onChange={(e)=>setEmail(e.target.value)}
-						value={data.email}
-						required
+						
 						className={styles.input}
 					/>
 					<input
@@ -45,8 +57,6 @@ const Login = () => {
 						placeholder="Password"
 						name="password"
 						onChange={(e)=>setPassword(e.target.value)}
-						value={data.password}
-						required
 						className={styles.input}
 					/>
 						  

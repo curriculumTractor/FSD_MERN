@@ -8,33 +8,57 @@ const Signup = () => {
     
 	const navigate = useNavigate()
 
-	const [firstName,setFirstName]=useState('');
-	const [lastName,setLastName]=useState('');
-	const [email,setEmail]=useState('')
-	const [phoneNumber,setPhoneNumber]=useState(0)
-	const [password,setPassword]=useState('')
-	const [confirmpassword,setConfirmPassword]=useState('')
+	const [data,setData]=useState({
+			firstName:"",
+			lastName:"",
+			email: "",
+			phoneNumber:null,
+			password:"",
+			confirmPassword:""
+	})
 
-	const userAuthentication =()=>{
-		const userData={
-			"firstName":firstName,
-			"lastName": lastName,
-			"email":email,
-			"phoneNumber":phoneNumber,
-			"password":password,
-			"confirmPassword":confirmpassword
-		}
-		axios.post(`http://localhost:3005/signup`,
-		userData
-		).then((getData)=>{
-			if(getData.data){
-				navigate('/home')
+	const signUpData =()=>{
+		console.log(data)
+		axios.post(`http://localhost:3005/signup`,data)
+		.then((response)=>{
+			console.log(response.data)
+
+			if(response.data.status=="success"){
+				let token=response.data.token
+				let userId=response.data.data[0]._id
+				alert("user registered successfully")
+				setData(
+					{
+						firstName:"",
+						lastName:"",
+						email: "",
+						phoneNumber:null,
+						password:"",
+						confirmPassword:""
+					}
+				)
+
+				navigate('/login');
+
 			}
 			else{
 				alert("invalid user");
 			}
 		})
-	}
+		.catch((error)=>{
+			console.log(error)
+		})
+	  }
+	const inputHandler = (event)=>{
+		  const {name,value}=event.target 
+		  setData(
+			(previousState)=>({
+			  ...previousState,
+			  [name]:value
+			})
+		  )
+		}
+
 
   return (
     <div>
@@ -57,58 +81,52 @@ const Signup = () => {
 							        type="text"
 							        placeholder="First Name"
 							        name="firstName"
-							        onChange={handleChange}
-							        value={data.firstName}
-							        required
-							        className={styles.input}
+							        onChange={inputHandler}
+									value={data.firstName}
+							       	className={styles.input}
 						        />
 						        <input
 							        type="text"
 							        placeholder="Last Name"
 							        name="lastName"
-							        onChange={handleChange}
-							        value={data.lastName}
-							        required
+							        onChange={inputHandler}
+									value={data.lastName}
 							        className={styles.input}
 						        />
 						        <input
 							        type="email"
 							        placeholder="Email"
 							        name="email"
-							        onChange={handleChange}
-							        value={data.email}
-							        required
+							        onChange={inputHandler}
+									value={data.email}
 							        className={styles.input}
 						        />
 								<input
 							        type="text"
 							        placeholder="Phone Number"
 							        name="phoneNumber"
-							        onChange={handleChange}
-							        value={data.phoneNumber}
-							        required
+							        onChange={inputHandler}
+									value={data.phoneNumber}
 							        className={styles.input}
 						        />
 						        <input
 							        type="password"
 							        placeholder="Password"
 							        name="password"
-							        onChange={handleChange}
-							        value={data.password}
-							        required
+							        onChange={inputHandler}
+									value={data.password}
 							        className={styles.input}
 						        />
 								<input
 							        type="password"
 							        placeholder="Confirm Password"
 							        name="password"
-							        onChange={handleChange}
-							        value={data.confirmPassword}
-							        required
+							        onChange={inputHandler}
+									value={data.confirmPassword}
 							        className={styles.input}
 						        />
 						        
-						        <button type="submit" className={styles.green_btn} onClick={userAuthentication}>
+						        <button type="submit" className={styles.green_btn} onClick={signUpData}>
 							        Sign Up
 						        </button>
 					        </form>

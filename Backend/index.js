@@ -45,7 +45,7 @@ app.post('/signup',async(req,res)=>{
             res.json(saveUser);
         }
         else{ 
-            res.send({message :"Email already registered"});
+            res.json({message :"Email already registered"});
         }
     } catch (error) {
         console.log(error)

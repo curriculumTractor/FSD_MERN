@@ -5,33 +5,37 @@ import styles from './styles.module.css'
 
 
 const Signup = () => {
-    const [data,setData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phoneNumber: 0,
-        password: "",
-        confirmPassword: ""
-    });
-    const [error,setError] = useState("");
-    const navigate = useNavigate();
-
-    const handleChange = ({ currentTarget : input})=>{
-        setData({...data,[input.name]:input.value});
-    };
-
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		try {
-			const url = "http://localhost:3005/api/signup";
-			const {data:res} = await axios.post(url,data);
-			navigate("/login");
-			console.log(res.message);
-		} catch (error) {
-			console.log("error")
-		}
-	};
     
+	const navigate = useNavigate()
+
+	const [firstName,setFirstName]=useState('');
+	const [lastName,setLastName]=useState('');
+	const [email,setEmail]=useState('')
+	const [phoneNumber,setPhoneNumber]=useState(0)
+	const [password,setPassword]=useState('')
+	const [confirmpassword,setConfirmPassword]=useState('')
+
+	const userAuthentication =()=>{
+		const userData={
+			"firstName":firstName,
+			"lastName": lastName,
+			"email":email,
+			"phoneNumber":phoneNumber,
+			"password":password,
+			"confirmPassword":confirmpassword
+		}
+		axios.post(`http://localhost:3005/signup`,
+		userData
+		).then((getData)=>{
+			if(getData.data){
+				navigate('/home')
+			}
+			else{
+				alert("invalid user");
+			}
+		})
+	}
+
   return (
     <div>
         <div className={styles.signup_container}>
@@ -47,7 +51,7 @@ const Signup = () => {
                             </Link>
                         </div>
                         <div className={styles.right}>
-                           <form className={styles.form_container} onSubmit={handleSubmit}>
+                           <form className={styles.form_container}>
                                 <h1>Create Account</h1>
                                 <input
 							        type="text"
@@ -103,8 +107,8 @@ const Signup = () => {
 							        required
 							        className={styles.input}
 						        />
-						        {error && <div className={styles.error_msg}>{error}</div>}
-						        <button type="submit" className={styles.green_btn}>
+						        
+						        <button type="submit" className={styles.green_btn} onClick={userAuthentication}>
 							        Sign Up
 						        </button>
 					        </form>

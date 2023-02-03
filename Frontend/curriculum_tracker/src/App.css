@@ -36,3 +36,58 @@
     transform: rotate(360deg);
   }
 }
+
+/* home and nav styles */
+.logomain{
+  width: 315px;
+  height:73px;
+}
+
+.nav-item{
+  padding-left: 20px;
+}
+.navmain{
+  font-weight:normal;
+  background-color: #0099cc;
+  color: #fff;
+  border-radius: 10px;
+  padding:10px;
+ }
+ .sectionbody{
+  background-color: #ecf5ff;
+  margin: 0 auto;
+  padding: 10px 0px 0px 10px;
+ }
+ .announce{
+   padding: 20px 0px;
+ }
+ .coursesbox{
+  padding: 20px 0px;
+ }
+ .card{
+  width: 240px;
+  float: left;
+  margin: 1.2em;
+  padding: 5px;
+  background-color: #f2f7f8;
+ }
+ .card .btn{
+  color: #fff;
+ }
+ /* carousel button */
+ .carousel-control-next, .carousel-control-prev{
+  width: 10%;
+  left:10;
+ }
+ .carousel-indicators {
+  justify-content: right;
+ }
+ 
+.footer{
+  background-color: #0081a0;
+  padding: 35px 0px;
+  color: #fff;
+}
+.footer p, img{
+  padding: 5px 0px;
+}

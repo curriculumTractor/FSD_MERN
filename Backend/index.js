@@ -5,7 +5,7 @@ const Cors =  require("cors");
 const path=require('path');
 const PORT = 3005;
 const Bcrypt = require("bcrypt");
-const Jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
 const UserModel = require("./models/Users");
 const app =new Express();
@@ -55,14 +55,14 @@ app.post('/signup',async(req,res)=>{
 //lOGIN
 app.post("/login",(req,res)=>{
     try{  
-       var Email=req.body.Email;
-       var Password=req.body.Password;
-       let result=UserModel.find({Email:Email},(err,data)=>{
+       var email=req.body.email;
+       var password=req.body.password;
+       let result=UserModel.find({email:email},(err,data)=>{
            if(data.length>0){
                
-               const PasswordValidator=bcrpt.compareSync(Password,data[0].Password)
+               const PasswordValidator=Bcrypt.compareSync(password,data[0].password)
                if(PasswordValidator){
-                    jwt.sign({Email:Email,id:data[0]._id},"ictakproject",{expiresIn:"1d"},
+                    jwt.sign({email:email,id:data[0]._id},"ictakproject",{expiresIn:"1d"},
                     (err,token)=>{
                        if (err) {
                            res.json({"status":"error","error":err}) 

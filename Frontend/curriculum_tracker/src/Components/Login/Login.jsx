@@ -1,34 +1,29 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import styles from "./styles.module.css"
 
 const Login = () => {
-  const [data,setData] = useState({email: "" , password: ""});
-  const[error,setError] = useState("");
+	const navigate=useNavigate();
+	const [email,setEmail]=useState('')
+	const [password,setPassword]=useState('')
 
-  const handleChange = ({currentTarget: input})=>{
-    setData({...data, [input.name]:input.value});
-  };
-
-  const handleSubmit = async (e) => {
-		e.preventDefault();
-		try {
-			const url = "http://localhost:3005/api/auth";
-			const { data: res } = await axios.post(url, data);
-			localStorage.setItem("token", res.data);
-			window.location = "/login";
-		} catch (error) {
-			if (
-				error.response &&
-				error.response.status >= 400 &&
-				error.response.status <= 500
-			) {
-				setError(error.response.data.message);
-			}
+	const userAuthentication =()=>{
+		const userData={
+			"email":email,
+			"password":password
 		}
-	};
-
+		axios.post(`http://localhost:3005/signin`,
+		userData
+		).then((getData)=>{
+			if(getData.data){
+				navigate('/home')
+			}
+			else{
+				alert("invalid user");
+			}
+		})
+	}
   return (
     <div>
       <div className= {styles.login_container}>
@@ -40,7 +35,7 @@ const Login = () => {
 							  type="email"
 							  placeholder="Email"
 							  name="email"
-							  onChange={handleChange}
+							  onChange={(e)=>setEmail(e.target.value)}
 							  value={data.email}
 							  required
 							  className={styles.input}
@@ -49,12 +44,12 @@ const Login = () => {
 							  type="password"
 							  placeholder="Password"
 							  name="password"
-							  onChange={handleChange}
+							  onChange={(e)=>setPassword(e.target.value)}
 							  value={data.password}
 							  required
 							  className={styles.input}
 						  />
-						  {error && <div className={styles.error_msg}>{error}</div>}
+						  
 						  <button type="submit" className={styles.green_btn}>
 							  Sign In
 						  </button>
@@ -64,8 +59,8 @@ const Login = () => {
             <h1>New Here ?</h1>
             <Link to="/signup">
               <button type="button" className={styles.white_btn}>
-							  Sing Up
-						  </button>
+					Sign Up
+				</button>
             </Link>
           </div>
         </div>

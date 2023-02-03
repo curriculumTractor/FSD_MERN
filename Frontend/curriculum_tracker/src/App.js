@@ -11,6 +11,10 @@ function App() {
       <Route path='/' exact element={<Home/>}/>
       <Route path='/login' exact = {<Login/>}/>
       <Route path='/signup' exact = {<Signup/>}/>
+     
+      
+
+    
     </Routes>
     </BrowserRouter>
   );

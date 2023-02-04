@@ -37,7 +37,8 @@ const Signup = () => {
 						confirmPassword:""
 					}
 				)
-
+					// sessionStorage.getItem("userId",userId);
+					// sessionStorage.getItem("token",token);
 				navigate('/login');
 
 			}
@@ -120,7 +121,7 @@ const Signup = () => {
 								<input
 							        type="password"
 							        placeholder="Confirm Password"
-							        name="password"
+							        name="confirmPassword"
 							        onChange={inputHandler}
 									value={data.confirmPassword}
 							        className={styles.input}

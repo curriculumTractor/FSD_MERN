@@ -12,7 +12,7 @@ const Signup = () => {
 			firstName:"",
 			lastName:"",
 			email: "",
-			phoneNumber:null,
+			phoneNumber:"",
 			password:"",
 			confirmPassword:""
 	})
@@ -32,7 +32,7 @@ const Signup = () => {
 						firstName:"",
 						lastName:"",
 						email: "",
-						phoneNumber:null,
+						phoneNumber:"",
 						password:"",
 						confirmPassword:""
 					}

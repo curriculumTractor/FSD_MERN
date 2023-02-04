@@ -22,8 +22,8 @@ const Signup = () => {
 		axios.post(`http://localhost:3005/signup`,data)
 		.then((response)=>{
 			console.log(response.data)
-
-			if(response.data.status=="success"){
+			console.log(response.data.data.status)
+			if(response.data.data.status=="success"){
 				let token=response.data.token
 				let userId=response.data.data[0]._id
 				alert("user registered successfully")
@@ -37,7 +37,8 @@ const Signup = () => {
 						confirmPassword:""
 					}
 				)
-
+					// sessionStorage.getItem("userId",userId);
+					// sessionStorage.getItem("token",token);
 				navigate('/login');
 
 			}
@@ -120,7 +121,7 @@ const Signup = () => {
 								<input
 							        type="password"
 							        placeholder="Confirm Password"
-							        name="password"
+							        name="confirmPassword"
 							        onChange={inputHandler}
 									value={data.confirmPassword}
 							        className={styles.input}

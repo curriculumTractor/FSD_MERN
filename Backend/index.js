@@ -30,7 +30,7 @@ app.post("/signin",async(req,res)=>{
             const passwordValidator=Bcrypt.compareSync(password,data[0].password)
             if(passwordValidator){
 
-               Jwt.sign({email:getEmail,id:data[0]._id},"loginToken",{expiresIn:"1d"},
+               jwt.sign({email:getEmail,id:data[0]._id},"loginToken",{expiresIn:"1d"},
 
                (err,token)=>{
                 if(err){

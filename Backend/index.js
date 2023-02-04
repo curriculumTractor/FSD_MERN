@@ -20,47 +20,6 @@ app.use(Cors());
 Mongoose.connect("mongodb+srv://ictakcurriculum:anprs@ictak-curriculum-tracke.k6qgvbb.mongodb.net/UserDB?retryWrites=true&w=majority",{useNewUrlParser: true});
 
 
-//Signin 
-
-app.post("/signin",async(req,res)=>{
-    var getEmail=req.body.email
-    var password=req.body.password
-
-    let result=UserModel.find({email:getEmail},(err,data)=>{
-        if(data.length>0){
-            const passwordValidator=Bcrypt.compareSync(password,data[0].password)
-            if(passwordValidator){
-
-               jwt.sign({email:getEmail,id:data[0]._id},"loginToken",{expiresIn:"1d"},
-
-               (err,token)=>{
-                if(err){
-                    res.json({"status":"error","error":err})
-                }
-                else{
-                    res.json({"status":"success","data":data,"token":token})
-                }
-               })
-            
-            }
-
-
-
-
-            else{
-                res.json({"status":"failed","data":"invalid password"})
-            }
-        }
-        else{
-            res.json({"status":"failed","data":"invalid email id"})
-        }
-    })
-
-    
-})
-
-
-
 //signup 
 
 app.post('/signup',async(req,res)=>{

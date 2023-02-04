@@ -29,7 +29,7 @@ const Login = () => {
 				sessionStorage.setItem("userToken",token)
 				sessionStorage.setItem("userId",userId)
 
-				navigate('/home2');
+				navigate('/user');
 
 			}
 			else{

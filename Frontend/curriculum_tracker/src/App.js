@@ -1,9 +1,10 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Components/Home';
+import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
-import Home2 from './Components/Home2';
+import Admin from './Components/Admindashboard/Admin';
+import User from './Components/Userdashboard/User';
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
       <Route path='/' exact element={<Home/>}/>
       <Route path='/login' exact element = {<Login/>}/>
       <Route path='/signup' exact element= {<Signup/>}/>
-      <Route path='/home2' exact element= {<Home2/>}/>
+      <Route path='/admin' exact element= {<Admin/>}/>
+      <Route path='/user' exact element= {<User/>}/>
+     
       
       
      

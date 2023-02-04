@@ -37,8 +37,8 @@ const Signup = () => {
 						confirmPassword:""
 					}
 				)
-					// sessionStorage.getItem("userId",userId);
-					// sessionStorage.getItem("token",token);
+					sessionStorage.getItem("userId",userId);
+					sessionStorage.getItem("token",token);
 				navigate('/login');
 
 			}

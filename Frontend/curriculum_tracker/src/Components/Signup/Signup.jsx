@@ -22,8 +22,8 @@ const Signup = () => {
 		axios.post(`http://localhost:3005/signup`,data)
 		.then((response)=>{
 			console.log(response.data)
-
-			if(response.data.status=="success"){
+			console.log(response.data.data.status)
+			if(response.data.data.status=="success"){
 				let token=response.data.token
 				let userId=response.data.data[0]._id
 				alert("user registered successfully")

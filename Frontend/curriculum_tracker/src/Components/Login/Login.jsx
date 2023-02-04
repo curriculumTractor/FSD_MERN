@@ -23,13 +23,14 @@ const Login = () => {
 				let token=response.data.token
 				let userId=response.data.data[0]._id
 				alert("valid user")
-				alert("usedId"+userId)
-				alert("token"+token)
+				alert("usedId:"+userId)
+				alert("token:"+token)
 
 				sessionStorage.setItem("userToken",token)
 				sessionStorage.setItem("userId",userId)
 
-				navigate('/user');
+				
+				navigate("/user")
 
 			}
 			else{

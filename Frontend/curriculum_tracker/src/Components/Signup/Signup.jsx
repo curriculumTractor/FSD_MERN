@@ -43,7 +43,7 @@ const Signup = () => {
 
 			}
 			else{
-				alert("invalid user");
+				alert("Something went wrong");
 			}
 		})
 		.catch((error)=>{

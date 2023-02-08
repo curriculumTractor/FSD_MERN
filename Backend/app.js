@@ -4,12 +4,8 @@ const Mongoose = require("mongoose");
 const Cors =  require("cors");
 const path=require('path');
 const PORT = 3005;
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const { adminAuth, userAuth } = require("./middleware/Auth");
-
-const UserModel = require("./models/Users");
 const app =new Express();
 
 

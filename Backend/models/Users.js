@@ -15,21 +15,32 @@ const UserSchema = new Schema({
 
     email : {
         type :String,
+        unique: true,
         required : true
     },
-    phoneNumber: {
-        type : Number,
+    username:{
+        type :String,
+        unique: true,
         required : true
     },
+    
 
     password : {
         type : String,
+        minlength: 6,
         required : true
     },
 
      confirmPassword : {
          type : String,
          required : true
+     },
+
+     role:{
+        type : String,
+        default: "Basic",
+         required : true
+
      }
 
     

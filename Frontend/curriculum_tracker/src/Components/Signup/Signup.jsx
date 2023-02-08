@@ -42,7 +42,7 @@ const Signup = () => {
 				)
 					sessionStorage.getItem("userId",userId);
 					sessionStorage.getItem("token",token);
-				navigate('/login');
+					navigate('/login1');
 
 			}
 			else{

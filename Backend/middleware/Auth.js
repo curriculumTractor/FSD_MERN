@@ -13,7 +13,7 @@ exports.register = async (req, res, next) => {
         return res.status(400).json({ message: "Password less than 6 characters" })
       }
   
-    bcrypt.hash(password,10).then(async (hash) => {
+    (bcrypt.hash(password,10),bcrypt.hash(confirmPassword,10)).then(async (hash) => {
       await User.create({
         firstName ,
         lastName ,

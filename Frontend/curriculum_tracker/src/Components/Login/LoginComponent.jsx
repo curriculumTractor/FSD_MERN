@@ -18,12 +18,12 @@ const LoginComponent = () => {
         try {
             const res = axios.post(`http://localhost:3005/api/auth/login`,
             userData)
-
-            const data = await res.json()
+          
+            const data = await res.json();
             if (res.status === 400 || res.status === 401) {
-              return display.textContent = `${data.message}. ${data.error ? data.error : ''}`
+              console.log(res.message)
             }
-            data.role === "admin" ? location.assign('/admin') : location.assign('/user')
+            data.role === "admin" ? navigate('/admin') : navigate('/user')
           } catch (err) {
               console.log(err.message)
             }

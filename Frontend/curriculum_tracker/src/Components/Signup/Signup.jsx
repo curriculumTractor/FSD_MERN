@@ -22,37 +22,12 @@ const Signup = () => {
 		console.log(data)
 		axios.post(`http://localhost:3005/api/auth/register`,data)
 		.then((response)=>{
-			console.log(response.data)
-			console.log(response.data.data.status)
-			if(response.data.data.status=="success"){
-				let token=response.data.token
-				let userId=response.data.data[0]._id
-				alert("user registered successfully")
-				setData(
-					{
-						firstName:"",
-						lastName:"",
-						email: "",
-						username:"",
-						
-						password:"",
-						confirmPassword:"",
-						role:""
-					}
-				)
-					sessionStorage.getItem("userId",userId);
-					sessionStorage.getItem("token",token);
-				navigate('/login');
-
-			}
-			else{
-				alert("Something went wrong");
-			}
+			console.log(response);
+		},(error)=>{console.log(error);
 		})
-		.catch((error)=>{
-			console.log(error)
-		})
+		navigate('/login')
 	  }
+
 	const inputHandler = (event)=>{
 		  const {name,value}=event.target 
 		  setData(
@@ -72,7 +47,7 @@ const Signup = () => {
                     <div className={styles.signup_form_container}>
                         <div className={styles.left}>
                             <h1>Welcome Back</h1>
-                            <Link to ="/login">
+                            <Link to ="/login2">
                                 <button type='button' className={styles.white_btn}>
                                     Sign In
                                 </button>
@@ -130,7 +105,9 @@ const Signup = () => {
 							        className={styles.input}
 						        />
 						        
-						        <button type="submit" className={styles.green_btn} onClick={signUpData}>
+						        <button type="submit" className={styles.green_btn} onClick={()=>{signUpData(
+									console.log("error")
+								)}}>
 							        Sign Up
 						        </button>
 					        </form>

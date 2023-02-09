@@ -17,26 +17,10 @@ const Login = () => {
 		axios.post(`http://localhost:3005/signin`,
 		userData
 		).then((response)=>{
-			console.log(response.data)
-
-			if(response.data.status=="success"){
-				let token=response.data.token
-				let userId=response.data.data[0]._id
-				alert("valid user")
-				alert("usedId:"+userId)
-				alert("token:"+token)
-
-				sessionStorage.setItem("userToken",token)
-				sessionStorage.setItem("userId",userId)
-
-				
-				navigate("/user")
-
-			}
-			else{
-				alert("invalid user");
-			}
+			console.log(response);
+		},(error)=>{console.log(error);
 		})
+		navigate('/signup')
 	}
   return (
     <div>

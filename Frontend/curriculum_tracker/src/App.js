@@ -5,6 +5,7 @@ import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
 import Admin from './Components/Admindashboard/Admin';
 import User from './Components/Userdashboard/User';
+import LoginComponent from './Components/Login/LoginComponent';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/signup' exact element= {<Signup/>}/>
       <Route path='/admin' exact element= {<Admin/>}/>
       <Route path='/user' exact element= {<User/>}/>
+      <Route path='/login2' exact element= {<LoginComponent/>}/>
      
       
       

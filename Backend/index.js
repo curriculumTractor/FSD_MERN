@@ -54,6 +54,8 @@ app.post("/login",(req,res)=>{
     try{  
        var email=req.body.email;
        var password=req.body.password;
+        
+       
        let result=UserModel.find({email:email},(err,data)=>{
            if(data.length>0){
                
@@ -83,6 +85,9 @@ app.post("/login",(req,res)=>{
        console.log(error)
    }
    })
+
+
+
 
 
 app.get('/*', function (req, res) {

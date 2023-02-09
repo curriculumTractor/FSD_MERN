@@ -12,14 +12,15 @@ const Signup = () => {
 			firstName:"",
 			lastName:"",
 			email: "",
-			phoneNumber:"",
+			username:"",
 			password:"",
-			confirmPassword:""
+			confirmPassword:"",
+			role:""
 	})
 
 	const signUpData =()=>{
 		console.log(data)
-		axios.post(`http://localhost:3005/signup`,data)
+		axios.post(`http://localhost:3005/api/auth/register`,data)
 		.then((response)=>{
 			console.log(response.data)
 			console.log(response.data.data.status)
@@ -32,14 +33,16 @@ const Signup = () => {
 						firstName:"",
 						lastName:"",
 						email: "",
-						phoneNumber:"",
+						username:"",
+						
 						password:"",
-						confirmPassword:""
+						confirmPassword:"",
+						role:""
 					}
 				)
 					sessionStorage.getItem("userId",userId);
 					sessionStorage.getItem("token",token);
-				navigate('/login');
+					navigate('/login1');
 
 			}
 			else{
@@ -104,10 +107,10 @@ const Signup = () => {
 						        />
 								<input
 							        type="text"
-							        placeholder="Phone Number"
-							        name="phoneNumber"
+							        placeholder="Username"
+							        name="username"
 							        onChange={inputHandler}
-									value={data.phoneNumber}
+									value={data.username}
 							        className={styles.input}
 						        />
 						        <input

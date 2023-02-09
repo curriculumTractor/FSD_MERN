@@ -24,6 +24,37 @@ const Signup = () => {
 		.then((response)=>{
 			console.log(response);
 		},(error)=>{console.log(error);
+
+			console.log(response.data)
+			console.log(response.data.data.status)
+			if(response.data.data.status=="success"){
+				let token=response.data.token
+				let userId=response.data.data[0]._id
+				alert("user registered successfully")
+				setData(
+					{
+						firstName:"",
+						lastName:"",
+						email: "",
+						username:"",
+						
+						password:"",
+						confirmPassword:"",
+						role:""
+					}
+				)
+					sessionStorage.getItem("userId",userId);
+					sessionStorage.getItem("token",token);
+					navigate('/login1');
+
+			}
+			else{
+				alert("Something went wrong");
+			}
+		})
+		.catch((error)=>{
+			console.log(error)
+
 		})
 		navigate('/login')
 	  }

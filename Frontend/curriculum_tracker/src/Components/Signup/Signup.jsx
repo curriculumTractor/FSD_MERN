@@ -15,7 +15,7 @@ const Signup = () => {
 			username:"",
 			password:"",
 			confirmPassword:"",
-			role:""
+			
 	})
 
 	const signUpData =()=>{
@@ -30,7 +30,7 @@ const Signup = () => {
 				navigate('/login')
 				let token=response.data.token
 				let userId=response.data.data[0]._id
-				
+
 				
 				alert("user registered successfully")
 				setData(
@@ -41,7 +41,7 @@ const Signup = () => {
 						username:"",
 						password:"",
 						confirmPassword:"",
-						role:""
+						
 					}
 				)
 				
@@ -49,7 +49,6 @@ const Signup = () => {
 					sessionStorage.getItem("userId",userId);
 					sessionStorage.getItem("token",token);
 					
-					//console.log("error")
 					
 			}
 			else{
@@ -60,6 +59,7 @@ const Signup = () => {
 			console.log(error)
 		})
 	  }
+	  
 	const inputHandler = (event)=>{
 		  const {name,value}=event.target 
 		  setData(

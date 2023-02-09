@@ -1,71 +1,23 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 /* home and nav styles */
-.logomain{
-  width: 315px;
-  height:73px;
+body{
+  background-color: #f7fafd;
+}
+.offcanvas-body .nav-item a{
+  padding-left: 8px;
+}
+.offcanvas-body .nav-item a:hover{
+  color:#011014
 }
 
-.nav-item{
-  padding-left: 20px;
-}
-.navmain{
-  font-weight:normal;
-  background-color: #0099cc;
-  color: #fff;
-  border-radius: 10px;
-  padding:10px;
- }
  .sectionbody{
   background-color: #ecf5ff;
   margin: 0 auto;
-  padding: 10px 0px 0px 10px;
+  padding: 10px;
  }
- .announce{
-   padding: 20px 0px;
- }
- .coursesbox{
-  padding: 20px 0px;
- }
+
  .card{
-  width: 240px;
+  width: 255px;
   float: left;
   margin: 1.2em;
   padding: 5px;
@@ -73,6 +25,7 @@
  }
  .card .btn{
   color: #fff;
+  background-color: #0cbae4;
  }
  /* carousel button */
  .carousel-control-next, .carousel-control-prev{
@@ -82,6 +35,7 @@
  .carousel-indicators {
   justify-content: right;
  }
+
  
 .footer{
   background-color: #0081a0;

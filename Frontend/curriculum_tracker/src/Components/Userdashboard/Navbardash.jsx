@@ -15,20 +15,21 @@ const Navbardash = () => {
                 <a class="nav-link" href="#"><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" /></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/home">Home</a>
+                <a class="nav-link" aria-current="page" href="/user">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="/message"> <i class="fa-regular fa-message"></i></a>
               </li>
 
               {/* notification */}
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa-regular fa-bell"></i><span class="btn__badge pulse-button ">4</span>
+                  <i class="fa-regular fa-bell"></i><span class="btn__badge pulse-button ">1</span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li className='notifydrop'><a class="dropdown-item" href="#">First Message</a></li>
+                  <li className='notifydrop'><a class="dropdown-item" href="/message">New Notification</a></li>
                   <li class="dropdown-divider"></li>
-                  <li className='notifydrop'><a class="dropdown-item" href="#">Second Message</a></li>
-                  <li class="dropdown-divider"></li>
-                  <li className='notifydrop'><a class="dropdown-item" href="#">Third Message</a></li>
+                  <li className='notifydrop'><a class="dropdown-item" href="/message">All Notification</a></li>
                 </ul>
               </li>
               {/* notification */}
@@ -36,8 +37,7 @@ const Navbardash = () => {
               {/* Profile */}
               <li class="nav-item dropdown">
                 <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa-solid fa-user-vneck"></i>Profile
-                </a>
+                <i class="fa fa-user"></i></a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">My Profile</a></li>
                   <li><a class="dropdown-item" href="#">Settings</a></li>

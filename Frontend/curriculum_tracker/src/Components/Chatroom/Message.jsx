@@ -29,7 +29,7 @@ const Message = () => {
                 </section>
             </div>
 {/* left part ends*/}
-
+        
         <div className="col col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
             <section className='userright1' style={{height:"100%",marginRight:"90px"}}> 
 
@@ -54,14 +54,14 @@ const Message = () => {
                     alt="avatar 1"style={{width:"45px",height:"100%"}}/>
                 </div>
 
-                <div className="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2" style={{bottom:"0"}}>
+                <div className="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2" style={{height:"120%"}}>
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
-                      alt="avatar 3" style={{width:"45px",height:"100%"}}/>
+                      alt="avatar 3" style={{width:"45px"}}/>
                     <input type="text" className="form-control form-control-lg" id="exampleFormControlInput2"
-                      placeholder="Type message"/>
-                    <a className="ms-1 text-muted" href="#!"><i className="fas fa-paperclip"></i></a>
-                    <a className="ms-3 text-muted" href="#!"><i className="fas fa-smile"></i></a>
-                    <a className="ms-3" href="#!"><i className="fas fa-paper-plane"></i></a>
+                      placeholder="Type message" />
+                    <a className="ms-1 text-muted" href="#!" ><i className="fas fa-paperclip"></i></a>
+                    <a className="ms-3 text-muted" href="#!" ><i className="fas fa-smile"></i></a>
+                    <a className="ms-3" href="#!" ><i className="fas fa-paper-plane"></i></a>
                   </div>
 
         
@@ -74,9 +74,15 @@ const Message = () => {
       </div>
      </div>
     </div>
-      
+    {/* footer */}
+    <div className="row g-0" style={{paddingTop:"25%"}}>
+            <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 footeruser">
+              <p>Copyright © 2023 ICT Academy Curriculum Tracker. All Rights Reserved</p>
+            </div>
+          </div>
+          {/* footer */}
     </div>
-  
+    
   )
 }
 

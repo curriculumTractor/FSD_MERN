@@ -62,7 +62,17 @@ const User = () => {
         <section className='userright1'> 
         <h5>Welcome to Your Portal</h5>
         <div class="coursebox">
-          <div class="hover hover-1 text-white rounded"><img src="https://bootstrapious.com/i/snippets/sn-img-hover/hoverSet-4.jpg" alt=""/>
+          <div class="hover hover-1 text-white rounded"><img src={require('./Course_imgs/ds.jpg')} alt=""/>
+          <div class="hover-overlay"></div>
+          <div class="hover-1-content px-5 py-4">
+            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Data </span>Science</h3>
+            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in Data Science</p>
+          </div>
+           </div>
+        </div> 
+
+        <div class="coursebox">
+          <div class="hover hover-1 text-white rounded"><img src={require('./Course_imgs/fsd.jpg')} alt=""/>
           <div class="hover-overlay"></div>
           <div class="hover-1-content px-5 py-4">
             <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Fullstack </span>Development</h3>
@@ -70,52 +80,42 @@ const User = () => {
           </div>
            </div>
         </div>
-
+    
         <div class="coursebox">
-          <div class="hover hover-1 text-white rounded"><img src="https://bootstrapious.com/i/snippets/sn-img-hover/hoverSet-4.jpg" alt=""/>
+          <div class="hover hover-1 text-white rounded"><img src={require('./Course_imgs/ai.jpg')} alt=""/>
           <div class="hover-overlay"></div>
           <div class="hover-1-content px-5 py-4">
-            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Data </span>Science</h3>
-            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in FSD (MERN)</p>
-          </div>
-           </div>
-        </div> 
-
-        <div class="coursebox">
-          <div class="hover hover-1 text-white rounded"><img src="https://bootstrapious.com/i/snippets/sn-img-hover/hoverSet-4.jpg" alt=""/>
-          <div class="hover-overlay"></div>
-          <div class="hover-1-content px-5 py-4">
-            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Aetificial </span>Intelligence</h3>
-            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in FSD (MERN)</p>
+            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Artificial </span>Intelligence</h3>
+            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in Artificial Intelligence</p>
           </div>
            </div>
         </div>         
      </section>
      <section className='userright2'>
        <div class="coursebox">
-          <div class="hover hover-1 text-white rounded"><img src="https://bootstrapious.com/i/snippets/sn-img-hover/hoverSet-4.jpg" alt=""/>
+          <div class="hover hover-1 text-white rounded"><img src={require('./Course_imgs/ml.jpg')} alt=""/>
           <div class="hover-overlay"></div>
           <div class="hover-1-content px-5 py-4">
             <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Machine </span>Learning</h3>
-            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in FSD (MERN)</p>
+            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in Machine Learning</p>
           </div>
            </div>
         </div> 
         <div class="coursebox">
-          <div class="hover hover-1 text-white rounded"><img src="https://bootstrapious.com/i/snippets/sn-img-hover/hoverSet-4.jpg" alt=""/>
+          <div class="hover hover-1 text-white rounded"><img src={require('./Course_imgs/cs.jpg')} alt=""/>
           <div class="hover-overlay"></div>
           <div class="hover-1-content px-5 py-4">
             <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Cyber </span>Security</h3>
-            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in FSD (MERN)</p>
+            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in Cyber Security</p>
           </div>
            </div>
         </div> 
         <div class="coursebox">
-          <div class="hover hover-1 text-white rounded"><img src="https://bootstrapious.com/i/snippets/sn-img-hover/hoverSet-4.jpg" alt=""/>
+          <div class="hover hover-1 text-white rounded"><img src={require('./Course_imgs/st.jpg')} alt=""/>
           <div class="hover-overlay"></div>
           <div class="hover-1-content px-5 py-4">
             <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Software </span>Testing</h3>
-            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in FSD (MERN)</p>
+            <p class="hover-1-description font-weight-light mb-0">Certified Specialist Software Testing</p>
           </div>
            </div>
         </div> 

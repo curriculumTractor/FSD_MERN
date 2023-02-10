@@ -56,83 +56,85 @@ const User = () => {
                 {/* accordian */}
               </section>
             </div>
-
-            <div className="col col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
-              <section className='userright'>
-                <h5>Welcome to Your Portal</h5>
-                {/* Cuuriculum display */}
-                <div className="card mb-3 usercard">
-                  <div className="row g-0">
-                    <div className="col-md-4">
-                      <img src={require('../Home/HomeImages/19197641.jpg')} class="img-fluid rounded-start" alt="..." />
-                    </div>
-                    <div className="col-md-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="card mb-3 usercard">
-                  <div className="row g-0">
-                    <div className="col-md-4">
-                      <img src={require('../Home/HomeImages/19197641.jpg')} class="img-fluid rounded-start" alt="..." />
-                    </div>
-                    <div className="col-md-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="card mb-3 usercard">
-                  <div className="row g-0">
-                    <div className="col-md-4">
-                      <img src={require('../Home/HomeImages/19197641.jpg')} class="img-fluid rounded-start" alt="..." />
-                    </div>
-                    <div className="col-md-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="card mb-3 usercard">
-                  <div className="row g-0">
-                    <div className="col-md-4">
-                      <img src={require('../Home/HomeImages/19197641.jpg')} class="img-fluid rounded-start" alt="..." />
-                    </div>
-                    <div className="col-md-8">
-                      <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* Cuuriculum display */}
-              </section>
-            </div>
+            {/* left part ends*/}
+ {/* Cuuriculum display */}
+      <div className="col col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
+        <section className='userright1'> 
+        <h5>Welcome to Your Portal</h5>
+        <div class="coursebox">
+          <div class="hover hover-1 text-white rounded"><img src="https://bootstrapious.com/i/snippets/sn-img-hover/hoverSet-4.jpg" alt=""/>
+          <div class="hover-overlay"></div>
+          <div class="hover-1-content px-5 py-4">
+            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Fullstack </span>Development</h3>
+            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in FSD (MERN)</p>
           </div>
-          {/* footer */}
-          <div className="row g-0">
+           </div>
+        </div>
+
+        <div class="coursebox">
+          <div class="hover hover-1 text-white rounded"><img src="https://bootstrapious.com/i/snippets/sn-img-hover/hoverSet-4.jpg" alt=""/>
+          <div class="hover-overlay"></div>
+          <div class="hover-1-content px-5 py-4">
+            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Data </span>Science</h3>
+            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in FSD (MERN)</p>
+          </div>
+           </div>
+        </div> 
+
+        <div class="coursebox">
+          <div class="hover hover-1 text-white rounded"><img src="https://bootstrapious.com/i/snippets/sn-img-hover/hoverSet-4.jpg" alt=""/>
+          <div class="hover-overlay"></div>
+          <div class="hover-1-content px-5 py-4">
+            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Aetificial </span>Intelligence</h3>
+            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in FSD (MERN)</p>
+          </div>
+           </div>
+        </div>         
+     </section>
+     <section className='userright2'>
+       <div class="coursebox">
+          <div class="hover hover-1 text-white rounded"><img src="https://bootstrapious.com/i/snippets/sn-img-hover/hoverSet-4.jpg" alt=""/>
+          <div class="hover-overlay"></div>
+          <div class="hover-1-content px-5 py-4">
+            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Machine </span>Learning</h3>
+            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in FSD (MERN)</p>
+          </div>
+           </div>
+        </div> 
+        <div class="coursebox">
+          <div class="hover hover-1 text-white rounded"><img src="https://bootstrapious.com/i/snippets/sn-img-hover/hoverSet-4.jpg" alt=""/>
+          <div class="hover-overlay"></div>
+          <div class="hover-1-content px-5 py-4">
+            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Cyber </span>Security</h3>
+            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in FSD (MERN)</p>
+          </div>
+           </div>
+        </div> 
+        <div class="coursebox">
+          <div class="hover hover-1 text-white rounded"><img src="https://bootstrapious.com/i/snippets/sn-img-hover/hoverSet-4.jpg" alt=""/>
+          <div class="hover-overlay"></div>
+          <div class="hover-1-content px-5 py-4">
+            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Software </span>Testing</h3>
+            <p class="hover-1-description font-weight-light mb-0">Certified Specialist in FSD (MERN)</p>
+          </div>
+           </div>
+        </div> 
+     </section>
+     
+    </div>
+      
+   {/* Cuuriculum display */}
+     </div>
+          
+     </div>
+    </div>
+      {/* footer */}
+      <div className="row g-0">
             <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 footeruser">
               <p>Copyright © 2023 ICT Academy Curriculum Tracker. All Rights Reserved</p>
             </div>
           </div>
           {/* footer */}
-        </div>
-      </div>
     </div>
   )
 }

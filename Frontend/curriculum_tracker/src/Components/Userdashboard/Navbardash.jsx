@@ -11,6 +11,9 @@ const Navbardash = () => {
           <a class="navbar-brand" href="#"><img src={require('../imagelogo/logo_ct.png')}  alt="..." /></a>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" /></a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/home">Home</a>
               </li>
@@ -29,10 +32,7 @@ const Navbardash = () => {
                 </ul>
               </li>
               {/* notification */}
-              <li class="nav-item">
-                <a class="nav-link" href="#"><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" /></a>
-              </li>
-
+              
               {/* Profile */}
               <li class="nav-item dropdown">
                 <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

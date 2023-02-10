@@ -8,6 +8,7 @@ import User from './Components/Userdashboard/User';
 import React from 'react';
 
 import Message from './Components/Chatroom/Message';
+import Profile from './Components/Profile/Profile';
 
 
 
@@ -22,7 +23,7 @@ function App() {
         <Route path='/signup' exact element={<Signup />} />
         <Route path='/admin' exact element={<Admin />} />
         <Route path='/user' exact element={<User />} />
-      
+        <Route path='/profile' exact element={<Profile />} />
         <Route path='/message' exact element={<Message />} />
        
        

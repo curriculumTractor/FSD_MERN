@@ -5,7 +5,7 @@ const Navbar = () => {
     <div>
     <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Curriculum Tracker</a>
+    <a class="navbar-brand" href="#"><img src={require('../imagelogo/logo_ct.png')}  alt="..." /></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>

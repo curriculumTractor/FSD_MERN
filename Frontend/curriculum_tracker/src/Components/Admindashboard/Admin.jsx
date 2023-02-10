@@ -5,8 +5,9 @@ import Admin_navbar from './Admin_navbar'
 const Admin = () => {
   return (
     <div>
-      <div className="container userbody g-0">
-        <Admin_navbar />
+      <Admin_navbar />
+     
+        
       <div className="row g-3">
         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
           <div className="row">
@@ -149,7 +150,7 @@ const Admin = () => {
           {/* footer */}
         </div>
       </div>
-    </div>    </div>
+    </div>    
   )
 }
 

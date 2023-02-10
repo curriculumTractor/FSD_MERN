@@ -7,6 +7,10 @@ import Admin from './Components/Admindashboard/Admin';
 import User from './Components/Userdashboard/User';
 import React from 'react';
 
+import Message from './Components/Chatroom/Message';
+
+
+
 
 
 function App() {
@@ -18,6 +22,10 @@ function App() {
         <Route path='/signup' exact element={<Signup />} />
         <Route path='/admin' exact element={<Admin />} />
         <Route path='/user' exact element={<User />} />
+      
+        <Route path='/message' exact element={<Message />} />
+       
+       
 
 
 

@@ -3,108 +3,92 @@ import Navbardash from '../Userdashboard/Navbardash'
 
 const Profile = () => {
   return (
+    <div>
+      <Navbardash />
     
-    <section style={{background:"#eee"}}>
-      <Navbardash/>
-  <div className="container py-5">
-   
+    
+    <div className="row g-3">
+      <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <div className="row">
+          <div className="col col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
+              <section className='userleft' style={{background:" #CDC4F9",height:"100%"}} >
+              <div className="col-lg-4" >
+                <div className="card mb-4" style={{background:" #CDC4F9"}}>
+                  <div className="card-body text-center">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                    className="rounded-circle img-fluid" style={{width:"150px"}}/>
+                    <h5 className="my-3">User</h5>
+                    <p className="text-muted mb-1">Full Stack Developer</p>
+                    <p className="text-muted mb-4">ICT Academy Of Kerala</p>
+                    <div className="d-flex justify-content-center mb-2">
+                        <button type="button" className="btn btn-primary" style={{background:"#39d1a6"}}>Edit Profile</button>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+                  
+              </section>
+          </div>
+{/* left part ends*/}
 
-    <div className="row">
-      <div className="col-lg-4">
-        <div className="card mb-4">
-          <div className="card-body text-center">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-              className="rounded-circle img-fluid" style={{width:"150px"}}/>
-            <h5 className="my-3">User</h5>
-            <p className="text-muted mb-1">Full Stack Developer</p>
-            <p className="text-muted mb-4">ICT Academy Of Kerala</p>
-            <div className="d-flex justify-content-center mb-2">
-              <button type="button" className="btn btn-primary">Edit Profile</button>
-              
-            </div>
-          </div>
-        </div>
-        <div className="card mb-4 mb-lg-0">
-          <div className="card-body p-0">
-            <ul className="list-group list-group-flush rounded-3">
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i className="fas fa-globe fa-lg text-warning"></i>
-                <p className="mb-0">https://mdbootstrap.com</p>
-              </li>
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i className="fab fa-github fa-lg" style={{color:"#333333"}}></i>
-                <p className="mb-0">mdbootstrap</p>
-              </li>
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i className="fab fa-twitter fa-lg" style={{color:"#55acee"}} ></i>
-                <p className="mb-0">@mdbootstrap</p>
-              </li>
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i className="fab fa-instagram fa-lg" style={{color:"#ac2bac"}}></i>
-                <p className="mb-0">mdbootstrap</p>
-              </li>
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i className="fab fa-facebook-f fa-lg"  style={{color:"#3b5998"}}></i>
-                <p className="mb-0">mdbootstrap</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="col-lg-8">
-        <div className="card mb-4">
-          <div className="card-body">
-            <div className="row">
-              <div className="col-sm-3">
-                <p className="mb-0">Full Name</p>
-              </div>
-              <div className="col-sm-9">
-                <p className="text-muted mb-0">Johnatan Smith</p>
-              </div>
-            </div>
-            <hr/>
-            <div className="row">
-              <div className="col-sm-3">
-                <p className="mb-0">Email</p>
-              </div>
-              <div className="col-sm-9">
-                <p className="text-muted mb-0">example@example.com</p>
-              </div>
-            </div>
-            <hr/>
-            <div className="row">
-              <div className="col-sm-3">
-                <p className="mb-0">Phone</p>
-              </div>
-              <div className="col-sm-9">
-                <p className="text-muted mb-0">(097) 234-5678</p>
-              </div>
-            </div>
-            <hr/>
-            <div className="row">
-              <div className="col-sm-3">
-                <p className="mb-0">Mobile</p>
-              </div>
-              <div className="col-sm-9">
-                <p className="text-muted mb-0">(098) 765-4321</p>
-              </div>
-            </div>
-            <hr/>
-            <div className="row">
-              <div className="col-sm-3">
-                <p className="mb-0">Address</p>
-              </div>
-              <div className="col-sm-9">
-                <p className="text-muted mb-0">Bay Area, San Francisco, CA</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
+      <div className="col col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
+          <section className='userright1' > 
+          <div>
+          <div class="mb-3 row" style={{marginTop:"50px"}}>
+    <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="user"/>
     </div>
   </div>
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"/>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Username</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="username"/>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=".........."/>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Designation</label>
+    <div class="col-sm-6">
+      <input type="password" class="form-control" id="inputDesig" placeholder='Enter your Designantion'/>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Stream</label>
+    <div class="col-sm-6">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Select Your Stream</option>
+        <option value="1">FSD</option>
+        <option value="2">ML-AI</option>
+        <option value="3">DSA</option>
+        <option value="3">RPA</option>
+        <option value="3">ST</option>
+        <option value="3">CSA</option>
+      </select>
+    </div>
+  </div>
+  <div className="d-flex justify-content-left mb-2 ">
+    <button type="button" className="btn" style={{background:"#39d1a6",marginTop:"50px"}}>Update Profile</button>
+  </div>
+</div>           
 </section>
+  </div>
+    </div>
+   </div>
+  </div>
+  </div>
+ 
   )
 }
 

@@ -4,13 +4,16 @@ import Navbardash from '../Userdashboard/Navbardash'
 
 const Message = () => {
   return (
-    <div className="container userbody g-0">
+    <div>
       <Navbardash />
+    
+      
       <div className="row g-3">
         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
           <div className="row">
             <div className="col col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
-                <section className='userleft' style={{background:" #CDC4F9"}} >
+                <section className='userleft' style={{background:" #CDC4F9",height:"100%"}}>
+
                     <h5 style={{textAlign:"center",color:"white",paddingTop:"8px"}}>Messages</h5>
                     <div class="btn-group" style={{width:"100%",paddingRight:"5px",paddingLeft:"5px"}}>
                         <button type="button" class="btn btn-secondary ">Inbox</button>
@@ -28,7 +31,7 @@ const Message = () => {
 {/* left part ends*/}
 
         <div className="col col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
-            <section className='userright1' > 
+            <section className='userright1' style={{height:"100%",marginRight:"90px"}}> 
 
             
   
@@ -51,7 +54,7 @@ const Message = () => {
                     alt="avatar 1"style={{width:"45px",height:"100%"}}/>
                 </div>
 
-                <div className="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2">
+                <div className="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2" style={{bottom:"0"}}>
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
                       alt="avatar 3" style={{width:"45px",height:"100%"}}/>
                     <input type="text" className="form-control form-control-lg" id="exampleFormControlInput2"
@@ -73,6 +76,7 @@ const Message = () => {
     </div>
       
     </div>
+  
   )
 }
 

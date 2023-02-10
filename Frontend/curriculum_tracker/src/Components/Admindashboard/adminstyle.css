@@ -3,7 +3,10 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #f0f0f0;
     }
-  
+
+    body::-webkit-scrollbar{
+      display: none;
+    }
   .navbg{
     background-color: #222827;
     

@@ -6,10 +6,12 @@ const path=require('path');
 const PORT = 3005;
 const Bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
+const Multer = require('multer');
 const UserModel = require("./models/Users");
-const app =new Express();
+const ReqModel = require('./models/requirement')
 
+const app =new Express();
+app.use("/uploads",Express.static("./uploads"));
 
 app.use(Express.static(path.join(__dirname+'/Frontend')));
 app.use(Body_parser.json());
@@ -122,4 +124,50 @@ app.get('/*', function (req, res) {
 // listen
 app.listen(PORT,()=>{
     console.log(`Server started listening to port ${PORT}`);
+})
+
+
+
+//REQUIREMENT 
+//FILE UPLOAD
+const fileStorageEngine = Multer.diskStorage({
+    destination: (req, file, cb) =>{
+        cb(null, './uploads')	//foldername
+    },
+    filename: (req, file, cb) =>{
+        cb(null, file.originalname + Date.now().toString()+'.pdf')
+    }
+})
+
+
+//middleware
+const upload = Multer({storage: fileStorageEngine});
+
+app.post('/addrequirement',upload.single("photo"), async (req, res) => {
+
+    try {
+        let data1 = {
+            reqname: req.body.reqname,
+            area: req.body.area,
+            institution: req.body.institution,
+            catagory: req.body.catagory,
+            hours: req.body.hours,
+            imgpath:req.file.filename
+
+        }
+        console.log(data1);
+        let requirements = await ReqModel.findOne({ reqname: req.body.reqname })
+        if (!requirements) {
+            const newReq = new ReqModel(data1);
+            const saveReq = await newReq.save();
+            res.json(saveReq);
+            console.log(saveReq)
+        }
+        else {
+            res.json({ message: "Requirement already added" });
+        }
+    } catch (error) {
+        console.log(error)
+
+    }
 })

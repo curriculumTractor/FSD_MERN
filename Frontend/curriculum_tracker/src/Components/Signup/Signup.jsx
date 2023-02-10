@@ -15,18 +15,23 @@ const Signup = () => {
 			username:"",
 			password:"",
 			confirmPassword:"",
-			role:""
+			
 	})
 
 	const signUpData =()=>{
 		console.log(data)
-		axios.post(`http://localhost:3005/api/auth/register`,data)
+		axios.post(`http://localhost:3005/signup`,data)
 		.then((response)=>{
+			
 			console.log(response.data)
 			console.log(response.data.data.status)
 			if(response.data.data.status=="success"){
+
+				navigate('/login')
 				let token=response.data.token
 				let userId=response.data.data[0]._id
+
+				
 				alert("user registered successfully")
 				setData(
 					{
@@ -34,16 +39,17 @@ const Signup = () => {
 						lastName:"",
 						email: "",
 						username:"",
-						
 						password:"",
 						confirmPassword:"",
-						role:""
+						
 					}
 				)
+				
+
 					sessionStorage.getItem("userId",userId);
 					sessionStorage.getItem("token",token);
-					navigate('/login1');
-
+					
+					
 			}
 			else{
 				alert("Something went wrong");
@@ -53,6 +59,7 @@ const Signup = () => {
 			console.log(error)
 		})
 	  }
+	  
 	const inputHandler = (event)=>{
 		  const {name,value}=event.target 
 		  setData(
@@ -63,7 +70,6 @@ const Signup = () => {
 		  )
 		}
 
-
   return (
     <div>
         <div className={styles.signup_container}>
@@ -72,7 +78,7 @@ const Signup = () => {
                     <div className={styles.signup_form_container}>
                         <div className={styles.left}>
                             <h1>Welcome Back</h1>
-                            <Link to ="/login">
+                            <Link to ="/login2">
                                 <button type='button' className={styles.white_btn}>
                                     Sign In
                                 </button>
@@ -130,7 +136,7 @@ const Signup = () => {
 							        className={styles.input}
 						        />
 						        
-						        <button type="submit" className={styles.green_btn} onClick={signUpData}>
+						        <button type="submit" className={styles.green_btn} onClick={()=>{signUpData()}}>
 							        Sign Up
 						        </button>
 					        </form>

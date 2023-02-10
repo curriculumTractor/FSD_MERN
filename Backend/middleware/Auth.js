@@ -6,6 +6,8 @@ const bcrypt = require("bcrypt");
 
 const jwtSecret = '7e88b534fd636d963c1946481a49c65899179b3ebb24c7c9afa6cc62528d165b3a6486';
 
+//register
+
 exports.register = async (req, res, next) => {
   const { firstName ,lastName ,email ,username, password, confirmPassword } = req.body
   

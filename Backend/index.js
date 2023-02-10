@@ -29,9 +29,10 @@ app.post('/signup',async(req,res)=>{
             firstName : req.body.firstName,
             lastName : req.body.lastName,
             email : req.body.email,
-            phoneNumber : req.body.phoneNumber,
+            username : req.body. username,
             password : Bcrypt.hashSync(req.body.password,10),
             confirmPassword  : Bcrypt.hashSync(req.body.confirmPassword,10)
+          
             
         }
         // console.log(data);
@@ -40,6 +41,7 @@ app.post('/signup',async(req,res)=>{
             const newUser = new UserModel(data);
             const saveUser = await newUser.save();
             res.json(saveUser);
+            
         }
         else{ 
             res.json({message :"Email already registered"});
@@ -52,16 +54,19 @@ app.post('/signup',async(req,res)=>{
 //lOGIN
 app.post("/login",(req,res)=>{
     try{  
-       var email=req.body.email;
+       var  email =req.body.email;
        var password=req.body.password;
         
-       
-       let result=UserModel.find({email:email},(err,data)=>{
-           if(data.length>0){
+       if(email=="admin@gmail.com",password=="admin"){
+        res.json({message :"admin login"})
+       }
+        else{
+            UserModel.find({ email : email },(err,data)=>{
+            if(data.length>0){
                
                const PasswordValidator=Bcrypt.compareSync(password,data[0].password)
                if(PasswordValidator){
-                    jwt.sign({email:email,id:data[0]._id},"ictakproject",{expiresIn:"1d"},
+                    jwt.sign({email :email ,id:data[0]._id},"ictakproject",{expiresIn:"1d"},
                     (err,token)=>{
                        if (err) {
                            res.json({"status":"error","error":err}) 
@@ -81,9 +86,10 @@ app.post("/login",(req,res)=>{
                res.json({"Status":"Failed to Login","data":"Invalid Email id"})
            }
        })
-   }catch(error){
+   }}catch(error){
        console.log(error)
    }
+    
    })
 
 

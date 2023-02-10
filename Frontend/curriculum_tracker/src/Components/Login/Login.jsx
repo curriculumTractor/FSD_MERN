@@ -5,37 +5,42 @@ import styles from "./styles.module.css"
 
 const Login = () => {
 	const navigate=useNavigate();
-	const [email,setEmail]=useState('')
+
+	const [email ,setEmail ]=useState('')
 	const [password,setPassword]=useState('')
 
 	const userAuthentication =()=>{
 		const userData={
-			"email":email,
-			"password":password
+			"email ":email ,
+			"password":password,
+		
 		}
 		console.log(userData)
-		axios.post(`http://localhost:3005/signin`,
-		userData
-		).then((response)=>{
-			console.log(response.data)
 
+		axios.post(`http://localhost:3005/login`,
+		userData
+		)
+		.then((response)=>{
+			console.log(response.data)
 			if(response.data.status=="success"){
 				let token=response.data.token
 				let userId=response.data.data[0]._id
-				alert("valid user")
-				alert("usedId:"+userId)
-				alert("token:"+token)
-
-				sessionStorage.setItem("userToken",token)
-				sessionStorage.setItem("userId",userId)
-
 				
-				navigate("/user")
+				alert("valid user")
 
+				sessionStorage.getItem("userId",userId);
+				sessionStorage.getItem("token",token);
+
+				if(userData.role==='admin'){
+					navigate('/admin')
+				}else{
+					navigate('/user')
+				}
+			}else{
+				alert("invalid user")
 			}
-			else{
-				alert("invalid user");
-			}
+			
+			
 		})
 	}
   return (
@@ -46,9 +51,9 @@ const Login = () => {
             <form className={styles.form_container}>
               <h1>Login to Your Account</h1>
 					<input
-						type="email"
-						placeholder="Email"
-						name="email"
+						type="email "
+						placeholder="email "
+						name="email "
 						onChange={(e)=>setEmail(e.target.value)}
 						
 						className={styles.input}

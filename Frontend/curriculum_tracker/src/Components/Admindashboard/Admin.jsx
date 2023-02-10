@@ -12,7 +12,7 @@ const Admin = () => {
         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
           <div className="row">
             <div className="col col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
-              <section className='userleft'>
+              <section className='userleft'style={{height:"106%"}}>
                 {/* accordian  */}
                 <div className="accordion accordion-flush" id="accordionFlushExample">
                   <div className="accordion-item">
@@ -60,7 +60,7 @@ const Admin = () => {
 
             <div className="col col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
               <section className='userright'>
-                <h5>Welcome to Your Portal</h5>
+                <h5>Welcome to Admin Dashboard</h5>
 
                 {/* Cuuriculum display */}
                 <div className="card mb-3 usercard">
@@ -142,7 +142,7 @@ const Admin = () => {
             </div>
           </div>
           {/* footer */}
-          <div className="row g-0">
+          <div className="row g-0" style={{paddingTop:"5%"}}>
             <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 footeruser">
               <p>Copyright © 2023 ICT Academy Curriculum Tracker. All Rights Reserved</p>
             </div>

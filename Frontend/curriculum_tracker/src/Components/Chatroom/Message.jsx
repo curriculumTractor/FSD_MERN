@@ -12,15 +12,15 @@ const Message = () => {
         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
           <div className="row">
             <div className="col col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
-                <section className='userleft' style={{background:" #CDC4F9",height:"100%"}}>
+                <section className='userleft' style={{background:" #CDC4F9",height:"115%"}}>
 
                     <h5 style={{textAlign:"center",color:"white",paddingTop:"8px"}}>Messages</h5>
                     <div class="btn-group" style={{width:"100%",paddingRight:"5px",paddingLeft:"5px"}}>
                         <button type="button" class="btn btn-secondary ">Inbox</button>
-                        <button type="button" class="btn btn-secondary  dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button type="button" class="btn btn-secondary  dropdown-toggle dropdown-toggle-split " data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="visually-hidden">Toggle Dropdown</span>
                         </button>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
                             <li><a class="dropdown-item" href="#">Inbox</a></li>
                             <li><a class="dropdown-item" href="#">Archive</a></li>
                             <li><a class="dropdown-item" href="#">Spam</a></li>

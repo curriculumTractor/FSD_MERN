@@ -13,7 +13,7 @@ const User = () => {
         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
           <div className="row">
             <div className="col col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
-              <section className='userleft'>
+              <section className='userleft'style={{height:"160%"}}>
                 {/* accordian  */}
                 <div className="accordion accordion-flush" id="accordionFlushExample">
                   <div className="accordion-item">
@@ -62,7 +62,7 @@ const User = () => {
  {/* Cuuriculum display */}
       <div className="col col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
         <section className='userright1'> 
-        <h5>Welcome to Your Portal</h5>
+        <h5>Welcome to Faculty Dashboard</h5>
         <div class="coursebox">
           <div class="hover hover-1 text-white rounded"><img src={require('./Course_imgs/ds.jpg')} alt=""/>
           <div class="hover-overlay"></div>
@@ -131,7 +131,7 @@ const User = () => {
      </div>
     </div>
       {/* footer */}
-      <div className="row g-0">
+      <div className="row g-0" style={{paddingTop:"20%"}}>
             <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 footeruser">
               <p>Copyright © 2023 ICT Academy Curriculum Tracker. All Rights Reserved</p>
             </div>

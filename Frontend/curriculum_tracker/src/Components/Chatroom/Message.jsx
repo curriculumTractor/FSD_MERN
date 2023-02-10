@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbardash from '../Userdashboard/Navbardash'
+import {Box} from '@mui/material';
 
 
 const Message = () => {
@@ -29,8 +30,9 @@ const Message = () => {
                 </section>
             </div>
 {/* left part ends*/}
-        
+
         <div className="col col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
+          
             <section className='userright1' style={{height:"100%",marginRight:"90px"}}> 
 
             
@@ -68,9 +70,10 @@ const Message = () => {
                   
               
             </section>
-            
+           
      
         </div>
+        
       </div>
      </div>
     </div>

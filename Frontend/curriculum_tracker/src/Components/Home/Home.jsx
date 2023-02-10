@@ -3,9 +3,11 @@ import Navbar from './Navbar'
 
 const Home = () => {
   return (
-    <div className="container">
-       <div className="row g-3">
+    <div>
        <Navbar/>
+ 
+       <div className="row g-3">
+      
             <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 {/* Carousel starts */}
                 <div id="carouselExampleCaptions" class="carousel slide">
@@ -99,7 +101,7 @@ const Home = () => {
 
         <div className="row g-5">
             <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <section className='footer text-center'>
+                <section className='footer text-center' style={{marginTop:"20%"}}>
                   <img src={require('./HomeImages/cropped-ict-ico.png')} alt="" />
                   <p>GF-1 Thejaswini Building, Technopark Rd, Thiruvananthapuram, Kerala 695581<br/>
                   ICT Academy of Kerala is supported by Govt. of India , partnered by Govt. of Kerala and the IT industry.<br/>
@@ -108,6 +110,7 @@ const Home = () => {
             </div>
         </div>
     </div>
+   
   )
 }
 

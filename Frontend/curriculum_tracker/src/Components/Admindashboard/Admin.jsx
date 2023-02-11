@@ -12,7 +12,7 @@ const Admin = () => {
         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
           <div className="row">
             <div className="col col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
-              <section className='userleft'style={{height:"106%"}}>
+              <section className='userleft'style={{height:"100vh"}}>
                 {/* accordian  */}
                 <div className="accordion accordion-flush" id="accordionFlushExample">
                   <div className="accordion-item">

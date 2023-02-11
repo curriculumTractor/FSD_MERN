@@ -44,9 +44,12 @@ const Login = () => {
 		})
 	}
   return (
-    <div>
+    
       <div className= {styles.login_container}>
         <div className={styles.login_form_container}>
+			<div className="row">
+				<div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+			
           <div className={styles.left}>
             <form className={styles.form_container}>
               <h1>Login to Your Account</h1>
@@ -81,7 +84,9 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </div>
+	  </div>
+	  </div>
+    
   )
 }
 

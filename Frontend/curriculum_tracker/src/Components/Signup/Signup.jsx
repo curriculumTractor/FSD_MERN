@@ -73,12 +73,12 @@ const Signup = () => {
   return (
     <div>
         <div className={styles.signup_container}>
-            <div className="row">
-                <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            
+               
                     <div className={styles.signup_form_container}>
                         <div className={styles.left}>
                             <h1>Welcome Back</h1>
-                            <Link to ="/login2">
+                            <Link to ="/login">
                                 <button type='button' className={styles.white_btn}>
                                     Sign In
                                 </button>
@@ -144,8 +144,8 @@ const Signup = () => {
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+       
+  
   )
 }
 

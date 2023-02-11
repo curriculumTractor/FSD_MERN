@@ -51,7 +51,7 @@ const Requirement = () => {
                 "Content-Type":"multipart/form-data"
             }
         }
-        const res=await axios.post("http://localhost:3002/addrequirement",formData,config);
+        const res=await axios.post("http://localhost:3005/addrequirement",formData,config);
         console.log(res);
 
     }
@@ -73,7 +73,7 @@ const Requirement = () => {
                                 <div className="form-group">
                                     <label className="control-label col-sm-4">Requirement Name</label>
                                     <div className="col-sm-8">
-                                        <input type="text" name="reqname" size="30" placeholder='' onChange={setData}/>
+                                        <input type="text" name="reqname" size="" placeholder='' onChange={(e)=>setReqname(e.target.value)}/>
                                     </div>
                                 </div>
                                 
@@ -81,7 +81,7 @@ const Requirement = () => {
                                     <label className="control-label col-sm-4">Training Area</label>
                                     <div className="col-sm-8">
                                         {/* <input type="text" name="area" placeholder=''/> */}
-                                        <select name="area"  onChange={setData}>
+                                        <select name="area"  onChange={(e)=>setArea(e.target.value)}>
                                             <option>FSD</option>
                                              <option>ML-AI</option>
                                              <option>DSA</option>
@@ -94,14 +94,14 @@ const Requirement = () => {
                                 <div className="form-group">
                                     <label className="control-label col-sm-4">Instituition/Cooperate</label>
                                     <div className="col-sm-8">
-                                        <input type="text" size="30" placeholder='' name="institution"  onChange={setData}/>
+                                        <input type="text" size="30" placeholder='Institution' name="institution"  onChange={(e)=>setInstitution(e.target.value)}/>
                                     </div>
                                 </div>
                                 <div className="form-group">
                                     <label className="control-label col-sm-4">Catagory</label>
                                     <div className="col-sm-8">
                                         {/* <input type="text" name="catagory" placeholder=''/> */}
-                                        <select name="catagory"  onChange={setData}>
+                                        <select name="catagory"  onChange={(e)=>setCatagory(e.target.value)}>
                                             <option>RETAIL</option>
                                              <option>ACADEMIC</option>
                                              <option>CORPORATE</option>
@@ -113,11 +113,11 @@ const Requirement = () => {
                                 <div className="form-group">
                                     <label className="control-label col-sm-4">Number of Hours</label>
                                     <div className="col-sm-8">
-                                        <input type="text" placeholder=' ' size="30" name="hours"  onChange={setData}/>
+                                        <input type="text" placeholder='Hours ' size="30" name="hours"  onChange={(e)=>setHours(e.target.value)}/>
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <label className="control-label col-sm-4">Number of Hours</label>
+                                    <label className="control-label col-sm-4">File Upload</label>
                                     <div className="col-sm-8">
                                         <input type="file" placeholder=' '  name="photo" onChange={setimgfile}/>
                                     </div>

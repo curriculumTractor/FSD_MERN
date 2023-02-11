@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar = () => {
   return (
     <div>
-      <nav class="navbar fixed-top " style={{background:"#CDC4F9"}} >
+      <nav class="navbar fixed-top " style={{background:"#56b1a8"}} >
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><img src={require('../imagelogo/logo_ct.png')}  alt="..." /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">

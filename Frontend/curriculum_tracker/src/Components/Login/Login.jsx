@@ -9,7 +9,8 @@ const Login = () => {
 	const [email ,setEmail ]=useState('')
 	const [password,setPassword]=useState('')
 
-	const userAuthentication =()=>{
+	const userAuthentication =(e)=>{
+		e.preventDefault()
 		const userData={
 			"email ":email ,
 			"password":password,
@@ -30,7 +31,7 @@ const Login = () => {
 
 				sessionStorage.getItem("userId",userId);
 				sessionStorage.getItem("token",token);
-
+console.log(userData)
 				if(userData.role==='admin'){
 					navigate('/admin')
 				}else{

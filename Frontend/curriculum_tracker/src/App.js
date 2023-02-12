@@ -26,12 +26,7 @@ function App() {
         <Route path='/profile' exact element={<Profile />} />
         <Route path='/message' exact element={<Message />} />
         <Route path='/requirement' exact element={<Requirement />} />
-       
-       
-
-
-
-
+      
       </Routes>
     </BrowserRouter>
   );

@@ -39,9 +39,9 @@ const Navbardash = () => {
                 <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-user"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
-                  <li><a class="dropdown-item" href="/profile">My Profile</a></li>
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                  <li><a class="dropdown-item" href="/">Logout</a></li>
+                  <li><a class="dropdown-item" href="/profile" style={{color:"#2b2c2c"}}>My Profile</a></li>
+                  <li><a class="dropdown-item" href="#"style={{color:"#2b2c2c"}}>Settings</a></li>
+                  <li><a class="dropdown-item" href="/"style={{color:"#2b2c2c"}}>Logout</a></li>
                 </ul>
                 </li>
 

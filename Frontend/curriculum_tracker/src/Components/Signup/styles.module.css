@@ -74,7 +74,7 @@
 	border: none;
 	outline: none;
 	padding: 12px 0;
-	background-color: white;
+	background-color: rgb(31, 29, 29);
 	border-radius: 20px;
 	width: 180px;
 	font-weight: bold;
@@ -87,3 +87,7 @@
 	color: white;
 	margin: 10px;
 }
+error {
+	font-size: 10px;
+	color: #d73542;
+  }

@@ -81,7 +81,16 @@ const Home = () => {
                   <a href="/" class="btn">Get Details</a>
                 </div>
               </div>
-                {/* card 4 */}
+              {/* card 4 */}
+              <div className="card">
+                <img src={require('./HomeImages/19197641.jpg')} class="card-img-top" alt="..."/>
+                <div className="card-body">
+                  <h5 className="card-title">Course Name</h5>
+                  <p className="card-text">Some quick example text to build on the card.</p>
+                  <a href="/" class="btn">Get Details</a>
+                </div>
+              </div>
+                {/* card 5 */}
               <div className="card">
                 <img src={require('./HomeImages/20945659.jpg')} class="card-img-top" alt="..."/>
                 <div className="card-body">
@@ -93,7 +102,7 @@ const Home = () => {
             </div>
           </div>
 
-        <div className="row g-3">
+        <div className="row">
           <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <section className='footer text-center'>
               <img src={require('./HomeImages/cropped-ict-ico.png')} alt="" />

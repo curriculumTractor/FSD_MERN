@@ -28,15 +28,7 @@ const Navbar = () => {
                 <li class="nav-item">
                     <a class="nav-link" href="./login">Curriculum</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Category</a>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Retail</a></li>
-                    <li><a class="dropdown-item" href="#">Academic</a></li>
-                    <li><a class="dropdown-item" href="#">Corporate</a></li>
-                  </ul>
-                </li>
+                
               </ul>
             <form class="d-flex mt-3" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>

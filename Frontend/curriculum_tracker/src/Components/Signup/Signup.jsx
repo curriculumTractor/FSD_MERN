@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import styles from './styles.module.css'
-
+import {useForm} from 'react-hook-form'
 
 const Signup = () => {
     
 	const navigate = useNavigate()
-
+	const {register, formState: {errors}, handleSubmit} = useForm();
 	const [data,setData]=useState({
 			firstName:"",
 			lastName:"",
@@ -18,19 +18,22 @@ const Signup = () => {
 			
 	})
 
+	const onSubmit = (data) => console.log(data)
 	const signUpData =()=>{
+		
 		console.log(data)
-		axios.post(`http://localhost:3005/signup`,data)
+		axios.post("http://localhost:3005/signup",data)
 		.then((response)=>{
 			
 			console.log(response.data)
-			console.log(response.data.data.status)
-			if(response.data.data.status=="success"){
+			// console.log(response.data.data.status)
+			if(response.data.status=="success"){
 
 				navigate('/login')
+				
 				let token=response.data.token
-				let userId=response.data.data[0]._id
 
+				sessionStorage.setItem("token",token);
 				
 				alert("user registered successfully")
 				setData(
@@ -46,14 +49,11 @@ const Signup = () => {
 				)
 				
 
-					sessionStorage.getItem("userId",userId);
-					sessionStorage.getItem("token",token);
+					
 					
 					
 			}
-			else{
-				alert("Something went wrong");
-			}
+			alert(response.data.message||response.data.status)
 		})
 		.catch((error)=>{
 			console.log(error)
@@ -78,65 +78,119 @@ const Signup = () => {
                     <div className={styles.signup_form_container}>
                         <div className={styles.left}>
                             <h1>Welcome Back</h1>
-                            <Link to ="/login2">
+                            <Link to ="/login">
                                 <button type='button' className={styles.white_btn}>
                                     Sign In
                                 </button>
                             </Link>
                         </div>
                         <div className={styles.right}>
-                           <form className={styles.form_container}>
+                           <form onSubmit={handleSubmit(signUpData)} className={styles.form_container}>
                                 <h1>Create Account</h1>
                                 <input
 							        type="text"
 							        placeholder="First Name"
-							        name="firstName"
+									{...register("firstName",{required: true})}	
+							        // name="firstName"
 							        onChange={inputHandler}
 									value={data.firstName}
 							       	className={styles.input}
+									
 						        />
+								<error>
+										{errors.firstName?.type === "required" && "First name is required"}
+								</error>
+
 						        <input
 							        type="text"
 							        placeholder="Last Name"
+									{...register("lastName",{required: true})}	
 							        name="lastName"
 							        onChange={inputHandler}
 									value={data.lastName}
 							        className={styles.input}
+									
 						        />
+								<error>
+										{errors.lastName?.type === "required" && "Last name is required"}
+								</error>
+
 						        <input
 							        type="email"
 							        placeholder="Email"
+									{...register("email", {
+										required: true,
+										pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i,
+									  })}
 							        name="email"
 							        onChange={inputHandler}
 									value={data.email}
 							        className={styles.input}
+									
 						        />
+								<error>
+          						  {errors.email?.type === "required" && "Email is required"}
+           						  {errors.email?.type === "pattern" &&
+              							"Entered email is in wrong format"}
+          						</error>
+
 								<input
 							        type="text"
 							        placeholder="Username"
+									{...register("username",{required: true})}	
 							        name="username"
 							        onChange={inputHandler}
 									value={data.username}
 							        className={styles.input}
 						        />
+								<error>
+										{errors.username?.type === "required" && "Username is required"}
+								</error>
+
 						        <input
 							        type="password"
 							        placeholder="Password"
+									{...register("password", {
+										required: true,
+										minLength: 5,
+										maxLength: 10,
+									  })}
 							        name="password"
 							        onChange={inputHandler}
 									value={data.password}
 							        className={styles.input}
 						        />
+
+								<error>
+									{errors.password?.type === "required" && "Password is required"}
+            						{errors.password?.type === "minLength" &&
+             							 "Entered password is less than 5 characters"}
+           						    {errors.password?.type === "maxLength" &&
+            							  "Entered password is more than 10 characters"}
+          						</error>
 								<input
 							        type="password"
 							        placeholder="Confirm Password"
+									{...register("confirmPassword", {
+										required: true,
+										minLength: 5,
+										maxLength: 10,
+									  })}
 							        name="confirmPassword"
 							        onChange={inputHandler}
 									value={data.confirmPassword}
 							        className={styles.input}
 						        />
+								<error>
+									{errors.confirmPassword?.type === "required" && "Confrim Password is required"}
+            						{errors.confirmPassword?.type === "minLength" &&
+             							 "Entered password is less than 5 characters"}
+           						    {errors.confirmPassword?.type === "maxLength" &&
+            							  "Entered password is more than 10 characters"}
+          						</error>
 						        
-						        <button type="submit" className={styles.green_btn} onClick={()=>{signUpData()}}>
+						        <button type="submit" className={styles.green_btn} onClick={()=>{signUpData()}} >
+								
 							        Sign Up
 						        </button>
 					        </form>

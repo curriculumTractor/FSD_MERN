@@ -41,8 +41,14 @@ app.post('/signup',async(req,res)=>{
         let User = await UserModel.findOne({email : req.body.email})
         if(!User){
             const newUser = new UserModel(data);
-            const saveUser = await newUser.save();
-            res.json(saveUser);
+            await newUser.save( (error,data)=>{
+                if (error) {
+                    res.json({"status": "Failed", "Error": error});
+                } else {
+                    res.json({"status": "success", "Data": data});
+                }
+            });
+            
             
         }
         else{ 
@@ -56,7 +62,7 @@ app.post('/signup',async(req,res)=>{
 //lOGIN
 app.post("/login",(req,res)=>{
     try{  
-       var  email =req.body.email;
+       var email =req.body.email;
        var password=req.body.password;
         
        if(email=="admin@gmail.com",password=="admin"){
@@ -114,7 +120,7 @@ io.on("connection", (client) => {
   });
 });
 
-server.listen(process.env.PORT || 3005);
+// server.listen(process.env.PORT || 3005);
 
 
 

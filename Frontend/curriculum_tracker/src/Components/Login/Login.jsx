@@ -18,9 +18,7 @@ const Login = () => {
 		}
 		console.log(userData)
 
-		axios.post(`http://localhost:3005/login`,
-		userData
-		)
+		axios.post("http://localhost:3005/login",userData)
 		.then((response)=>{
 			console.log(response.data)
 			if(response.data.status=="success"){
@@ -29,9 +27,9 @@ const Login = () => {
 				
 				alert("valid user")
 
-				sessionStorage.getItem("userId",userId);
-				sessionStorage.getItem("token",token);
-console.log(userData)
+				sessionStorage.setItem("userId",userId);
+				sessionStorage.setItem("token",token);
+				console.log(userData)
 				if(userData.role==='admin'){
 					navigate('/admin')
 				}else{
@@ -53,7 +51,7 @@ console.log(userData)
               <h1>Login to Your Account</h1>
 					<input
 						type="email "
-						placeholder="email "
+						placeholder="email "						
 						name="email "
 						onChange={(e)=>setEmail(e.target.value)}
 						

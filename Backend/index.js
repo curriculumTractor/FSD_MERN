@@ -145,24 +145,18 @@ app.post('/addrequirement',upload.single("photo"), async (req, res) => {
     }
 })
 
-//Receive Reqrmnt
 
-app.post('/recvrequirement',(req,res)=>{
-    var data=req.body;
-    var reqrdata=new ReqModel(data);
-    reqrdata.save(
-        (err,data)=>{
-            if (err) {
-                res.json({"status":"error","error":err})
-            } else {
-              res.json({"status":"success","data":data})  
-            }
-        }
-    );
+// faculty lisrequirement
+app.get('/reqlist', async (req, res) => {
+    try {
+        let list = await ReqModel.find({ "status": "notrespond" }).sort({"_id":-1})
+
+        res.send(list)
+
+    } catch (error) {
+        console.log(error)
+    }
 })
-
-
-
 
    
 

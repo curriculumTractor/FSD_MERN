@@ -14,7 +14,7 @@ const RecieveReqrmnt = () => {
     )
 
     const getData =()=>{
-        axios.get('http://localhost:3005/recvrequirement')
+        axios.get('http://localhost:3005/reqlist')
         .then(
             (response)=>{
                 

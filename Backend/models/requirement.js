@@ -31,7 +31,11 @@ const ReqSchema=new Schema({
     },
     date:{
         type:Date
-    }
+    },
+    status: {
+        type: String,
+        default: "notrespond"
+     }
      
 });
 let ReqModel=Mongoose.model("requirements",ReqSchema);

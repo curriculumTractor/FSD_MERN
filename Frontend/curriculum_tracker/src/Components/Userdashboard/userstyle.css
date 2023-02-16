@@ -1,8 +1,11 @@
+container-fluid{
+  margin: 0;
+  padding: 0;
+}
 .userbody{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #f0f0f0;
-  
+  background-color: #f0f0f0;  
   }
   body::-webkit-scrollbar{
     display: none;
@@ -123,14 +126,15 @@ ul {
   }
 
   /* course display */
-  .userright1{
-    margin-bottom: 14em;
+  .userright{
+    margin-bottom: 5em;
+    display: block;
+    min-height: 140px;
   }
-  .userright2{
-    margin-bottom: 2em;
-  }
-.userright1 h5{
+
+.userhead{
     margin-top: 2em;
+    font-size:20px;
    }
   /* GENERAL ====== */
 .hover {
@@ -267,3 +271,29 @@ div.content {
   }
 }
 /* sidebar */
+.greenbtn{
+  padding-left: 20px;
+}
+/*file upload page*/
+.uploadbox{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #fbf9f9fb;
+  width: 85%;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 2em;
+}
+.btnupload{
+  background-color: #118262;
+  border-radius: 3px;
+  width: 100px;
+  padding: 5px;
+  border: none;
+  color: #f0f0f0;
+}
+.btnupload:hover{
+  background-color: #1ca57e;
+}
+.uploadbox p{
+  text-align: center;
+}

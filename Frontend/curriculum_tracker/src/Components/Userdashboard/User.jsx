@@ -16,8 +16,8 @@ const User = () => {
        <div class="sidebar">
         <a class="active" href="/user"> Dashboard</a>
         <a href="/profile"><i class="fa-solid fa-user"></i>&nbsp;&nbsp; My Profile</a>
-        <a href="/message"><i class="fa-solid fa-message"></i>&nbsp;&nbsp; Messages</a>
-        <a href="/requirement"><i class="fa-solid fa-sheet-plastic"></i>&nbsp;&nbsp; Curriculum</a>
+        <a href="/recvrqrmnt"><i class="fa-solid fa-message"></i>&nbsp;&nbsp; View Requirements</a>
+        <a href="/recvrqrmnt"><i class="fa-solid fa-sheet-plastic"></i>&nbsp;&nbsp; Curriculum</a>
         <span className='greenbtn'><a href='/fileupload'><button className='btn btn-success'>Upload Curriculum</button></a></span>
       </div>
               {/* sidebar */}
@@ -25,7 +25,7 @@ const User = () => {
             {/* left part ends*/}
  {/* Cuuriculum display */}
       <div className="col col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
-      <h5 className='userhead'>Welcome to Faculty Dashboard</h5>
+      <h5 className='userhead'>Welcome to FACULTY Dashboard</h5>
         <section className='userright d-flex'> 
           <div class="coursebox">
           <div class="hover hover-1 text-white rounded"><img src={require('./Course_imgs/ds.jpg')} alt=""/>

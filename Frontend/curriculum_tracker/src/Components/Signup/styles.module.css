@@ -74,7 +74,8 @@
 	border: none;
 	outline: none;
 	padding: 12px 0;
-	background-color: rgb(31, 29, 29);
+	background-color: white;
+	color: #3bb19b;
 	border-radius: 20px;
 	width: 180px;
 	font-weight: bold;

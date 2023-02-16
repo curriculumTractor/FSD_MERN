@@ -2,6 +2,7 @@ import React,{useState}from 'react'
 import {Link,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './styles.css'
+import Admin_navbar from '../Admindashboard/Admin_navbar';
 
 const Requirement = () => {
      
@@ -64,6 +65,7 @@ const Requirement = () => {
 
   return (
     <div>
+        <Admin_navbar/>
           <div className="container">
                 <div className="row req-add bg-3">
                     <h1 class="adminreq">REQUIREMENT FORM</h1>

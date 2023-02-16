@@ -44,48 +44,45 @@ const Login = () => {
 	}
   return (
     
-      <div className= {styles.login_container}>
-        <div className={styles.login_form_container}>
-			<div className="row">
-				<div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-			
-          <div className={styles.left}>
-            <form className={styles.form_container}>
-              <h1>Login to Your Account</h1>
-					<input
-						type="email "
-						placeholder="email "						
-						name="email "
-						onChange={(e)=>setEmail(e.target.value)}
-						
-						className={styles.input}
-					/>
-					<input
-						type="password"
-						placeholder="Password"
-						name="password"
-						onChange={(e)=>setPassword(e.target.value)}
-						className={styles.input}
-					/>
-						  
-					<button type="submit" className={styles.green_btn} onClick={userAuthentication}>
-						Sign In
-					</button>
-			</form>
-          </div>
-          <div className={styles.right}>
-            <h1>New Here ?</h1>
-            <Link to="/signup">
-              <button type="button" className={styles.white_btn}>
-					Sign Up
+	<div className={styles.login_container}>
+	<div className={styles.login_form_container}>
+		<div className={styles.left}>
+			<form className={styles.form_container} >
+				<h1>Login to Your Account</h1>
+				<input
+					type="email"
+					placeholder="Email"
+					name="email"
+					onChange={(e)=>setEmail(e.target.value)}
+					
+					required
+					className={styles.input}
+				/>
+				<input
+					type="password"
+					placeholder="Password"
+					name="password"
+					onChange={(e)=>setPassword(e.target.value)}
+					
+					required
+					className={styles.input}
+				/>
+				
+				<button type="submit" className={styles.green_btn} onClick={userAuthentication}>
+					Sing In
 				</button>
-            </Link>
-          </div>
-        </div>
-      </div>
-	  </div>
-	  </div>
-    
+			</form>
+		</div>
+		<div className={styles.right}>
+			<h1>New Here ?</h1>
+			<Link to="/signup">
+				<button type="button" className={styles.white_btn} >
+					Sing Up
+				</button>
+			</Link>
+		</div>
+	</div>
+</div>
   )
 }
 

@@ -176,9 +176,11 @@ const storage = Multer.diskStorage({
 
 
  app.post('/curriculumupload',Mul.single('pdf'),(req,res)=>{
+    let comments = req.body.comments
     let cur = 'uploads/' + req.file.originalname;
     let temp = new CurModel({
-        pdfpath: cur
+        pdfpath: cur,
+        comments: comments
     })
     temp.save((err,data)=>{
         if (err) {

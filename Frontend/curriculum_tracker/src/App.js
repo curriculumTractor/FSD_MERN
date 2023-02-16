@@ -7,9 +7,10 @@ import Admin from './Components/Admindashboard/Admin';
 import User from './Components/Userdashboard/User';
 import React from 'react';
 
-import Message from './Components/Chatroom/Message';
+
 import Profile from './Components/Profile/Profile';
 import Requirement from './Components/RequirementForm/Requirement';
+import RecieveReqrmnt from './Components/Userdashboard/Requirement/RecieveReqrmnt';
 
 
 
@@ -24,8 +25,11 @@ function App() {
         <Route path='/admin' exact element={<Admin />} />
         <Route path='/user' exact element={<User />} />
         <Route path='/profile' exact element={<Profile />} />
-        <Route path='/message' exact element={<Message />} />
+        
         <Route path='/requirement' exact element={<Requirement />} />
+        <Route path='/recvrqrmnt' exact element={<RecieveReqrmnt/>} />
+       
+
       
       </Routes>
     </BrowserRouter>

@@ -101,40 +101,7 @@ app.post("/login",(req,res)=>{
    })
 
 
-   //chatrrom
-
-require("dotenv").config();
-const server = require("http").createServer();
-
-const io = require("socket.io")(server, {
-  cors: {
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST"],
-  },
-});
-
-io.on("connection", (client) => {
-  client.on("send_message", (data) => {
-    // Broadcast to all users
-    io.sockets.emit("receive_message", data);
-  });
-});
-
-// server.listen(process.env.PORT || 3005);
-
-
-
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/Frontend/index.html'));
-});
-// listen
-app.listen(PORT,()=>{
-    console.log(`Server started listening to port ${PORT}`);
-})
-
-
-
-//REQUIREMENT 
+   //REQUIREMENT 
 //FILE UPLOAD
 const fileStorageEngine = Multer.diskStorage({
     destination: (req, file, cb) =>{
@@ -177,3 +144,36 @@ app.post('/addrequirement',upload.single("photo"), async (req, res) => {
 
     }
 })
+
+//Receive Reqrmnt
+
+app.post('/recvrequirement',(req,res)=>{
+    var data=req.body;
+    var reqrdata=new ReqModel(data);
+    reqrdata.save(
+        (err,data)=>{
+            if (err) {
+                res.json({"status":"error","error":err})
+            } else {
+              res.json({"status":"success","data":data})  
+            }
+        }
+    );
+})
+
+
+
+
+   
+
+
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname + '/Frontend/public/index.html'));
+});
+// listen
+app.listen(PORT,()=>{
+    console.log(`Server started listening to port ${PORT}`);
+})
+
+
+

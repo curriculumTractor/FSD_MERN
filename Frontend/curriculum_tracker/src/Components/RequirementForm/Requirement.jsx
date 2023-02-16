@@ -66,7 +66,7 @@ const Requirement = () => {
     <div>
           <div className="container">
                 <div className="row req-add bg-3">
-                    <h1 >REQUIREMENT FORM</h1>
+                    <h1 class="adminreq">REQUIREMENT FORM</h1>
                     <div className="col col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <div className="col col-sm-8 req">
                             <form method="" className="form-horizontal" class="form-horizontal" >

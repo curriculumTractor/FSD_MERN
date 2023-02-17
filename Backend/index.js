@@ -229,14 +229,7 @@ app.get('/download/:id',(req,res)=>{
 })
 
 //DISPLAY curriculum
-
-
-
-
-app.post('/displaycurriculum',(req, res) => {
-
-    
-    
+app.post('/displaycurriculum',(req, res) => {   
     CurModel.find(
         (err,data)=>{
             

@@ -14,10 +14,11 @@ import RecieveReqrmnt from './Components/Userdashboard/Requirement/RecieveReqrmn
 import Search from './Components/Search/Search';
 import Aprofile from './Components/Profile/Aprofile';
 import CurriculumDisplay from './Components/Curriculum/CurriculumDisplay';
-import Fileupload from './Components/Userdashboard/FileUplod/Fileupload';
-import IsLoad from './Components/IsLoad';
+
+// import IsLoad from './Components/IsLoad';
 import ViewCurriculm from './Components/ViewAll_curriculm/ViewCurriculm';
 import ViewallFaculty from './Components/ViewAll_curriculm/ViewallFaculty';
+import Fileupload from './Components/Userdashboard/Fileupload';
 
 
 
@@ -41,10 +42,10 @@ function App() {
         <Route path='/user' exact element={<User />} />
         <Route path='/profile' exact element={<Profile />} />
         <Route path='/recvrqrmnt' exact element={<RecieveReqrmnt/>} />
-        <Route path='/fileupload' exact element={<Fileupload/>} />
+        
         <Route path='/viewallfaculty' exact element={<ViewallFaculty/>} />
        
-        
+        <Route path='/uploadcurriculum' exact element={<Fileupload/>} />
        
 
       

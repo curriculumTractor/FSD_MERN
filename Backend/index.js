@@ -10,6 +10,7 @@ const Multer = require('multer');
 const UserModel = require("./models/Users");
 const ReqModel = require('./models/requirement')
 const CurModel = require("./models/curriculum");
+const ErrorMessage = require("./config/errors");
 
 const app =new Express();
 app.use("/uploads",Express.static("./uploads"));
@@ -247,7 +248,63 @@ app.post('/displaycurriculum',(req, res) => {
 // ADMIN VIEW
 // ADMIN UPDATE
 
-// ADMIN DELETE
+app.put('/curriculum/:id/status',async (req,res)=>{
+    try{
+    let {status} = req.body
+    let {id} = req.params
+    if(!status){
+        return res.status(400).json({
+            success: false,
+            error: ErrorMessage.errorlang.FIELD_MISSING.BODY + ' : Status'
+        });
+    }
+    if(!id){
+        return res.status(400).json({
+            success: false,
+            error: ErrorMessage.errorlang.FIELD_MISSING.PARAMS + ' : id'
+        });
+    }
+     
+    let data = await CurModel.findOneAndUpdate({_id:id}, {status}, {
+        new: true
+      });
+     
+      return res.status(200).json({
+        success: true,
+        data: data
+    });
+   } catch (error) {
+    if(error.name === ErrorMessage.errorlang.CURRICULUM_ERRORMESSAGE){
+
+        return res.status(400).json({
+            success: false,
+            error: ErrorMessage.errorlang.WRONG_CURRICULUM
+        });
+    }
+    return res.status(400).json({
+        success: false,
+        error: error.message
+    });
+   }
+})
+// admin delete
+
+// display curriculum by status
+app.get("/curriculum", async (req, res) => {
+    try {
+      filter = {};
+      if (req.query.status) {
+        filter = { status: req.query.status };
+      }
+  
+      let list = await CurModel.find( filter ).sort({ _id: -1 });
+  
+      res.send(list);
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
 
 
 app.get('/*', function (req, res) {

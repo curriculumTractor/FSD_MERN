@@ -50,6 +50,7 @@ const ViewCurriculm = () => {
               {viewCurriculum.map(
                (value,index)=>{
                   return <tr>
+                    
                    <td>{value.pdfpath}</td>
                    <td><button>DOWNLOAD</button></td>
                    

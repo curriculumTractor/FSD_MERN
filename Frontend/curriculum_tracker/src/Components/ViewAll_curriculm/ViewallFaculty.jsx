@@ -41,7 +41,7 @@ const ViewallFaculty = () => {
                <tr>
                <th scope="col">Sl No</th>
                  <th scope="col">Past Curricculum</th>
-                
+                 <th scope="col">Download</th>
                  
                </tr>
              </thead>
@@ -50,7 +50,7 @@ const ViewallFaculty = () => {
                (value,index)=>{
                   return <tr>
                    <td>{value.pdfpath}</td>
-                 
+                   <td><button>DOWNLOAD</button></td>
                    
                 </tr> 
                }

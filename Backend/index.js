@@ -216,7 +216,7 @@ app.use(Express.static(pathh));
    
 // Download curriculum by admin
 app.get('/download/:id',(req,res)=>{
-    CurModel.find({_id:req.params._id},(err,data)=>{
+    CurModel.findById({_id:req.params._id},(err,data)=>{
          if(err){
              console.log(err)
          }

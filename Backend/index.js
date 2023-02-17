@@ -159,11 +159,10 @@ app.get('/reqlist', async (req, res) => {
 })
 
 // display past curriculum by faculty
-app.get('/pastlist', async (req, res) => {
+app.get('/pastlist',async (req, res) => {
     try {
-        let list = await CurModel.find({ "status": "notrespond" }).sort({"_id":-1})
-
-        res.send(list)
+        let curr = await CurModel.find()
+        res.send(curr)
 
     } catch (error) {
         console.log(error)
@@ -171,17 +170,15 @@ app.get('/pastlist', async (req, res) => {
 })
 
 // display past curriculum
-app.get('/pastlistbyfaculty', async (req, res) => {
+app.get('/pastlistbyfaculty',async (req, res) => {
     try {
-        let list = await CurModel.find({ "status": "notrespond" }).sort({"_id":-1})
-
-        res.send(list)
+        let curr = await CurModel.find()
+        res.send(curr)
 
     } catch (error) {
         console.log(error)
     }
 })
-
 
 
 // curriculum upload by faculty
@@ -196,7 +193,9 @@ const storage = Multer.diskStorage({
 
  const Mul = Multer({storage: storage});
 
- 
+// path
+const pathh = path.resolve(__dirname,'public');
+app.use(Express.static(pathh));
 
 
  app.post('/curriculumupload',Mul.single('pdf'),(req,res)=>{
@@ -217,7 +216,7 @@ const storage = Multer.diskStorage({
    
 // Download curriculum by admin
 app.get('/download/:id',(req,res)=>{
-    CurModel.find({_id:req.params.id},(err,data)=>{
+    CurModel.find({_id:req.params._id},(err,data)=>{
          if(err){
              console.log(err)
          }
@@ -227,6 +226,8 @@ app.get('/download/:id',(req,res)=>{
          }
     })
 })
+
+
 
 //DISPLAY curriculum
 app.post('/displaycurriculum',(req, res) => {   

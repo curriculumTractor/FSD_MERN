@@ -1,54 +1,63 @@
 .adminreq{
     text-align: -webkit-center;
-    background-color: #3fdf6f;
+    background-color:aqua;
     margin-top: 0;
     padding: 20px;
     color: white;
-    padding-top:350px;
-
-    
+    /* padding-top:350px;
+    background-size: 100% 800px; */
 }
 .req-add{
-    
-    background-size: 100% 800px;
+    background-color: aqua;
+    /* background-size: 100% 800px; */
     color: rgb(206, 203, 223);
     margin-right: 0px;
     margin-left: 1px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     font-size:30px;
-    display: flex;
+    /* display: flex;
     padding-bottom:200px;
     object-fit: cover;
-    background-size:cover; 
+    background-size:cover;  */
 }
 
 .req{
-    /* //width: 900px; */
-	height: 500px;
+    /* background-size: 100% 800px; */
+    /* height: 800px; */
     background-color: #4e75a1;
     border-radius: 10px;
     border:2px solid white;
-    flex-direction: column;
+    /* flex-direction: column;  */
    /* margin: auto; */
-    padding: 170px;
-    margin-left:1px;
-    margin-bottom:500px;
-    padding-bottom:600px;
+    padding: 15px;
+    /* margin-left:1px;
     
+    padding-bottom:600px; */
+    padding-left:200px ;
+    margin:auto;
+    margin-bottom:700px;
+    margin-top:0px;
 }
 .addbutton{
     
     margin-top:50px;
+    padding-right: 200px;
     text-align: -webkit-center;
     
 }
-button{
-    background-color: #4CAF50; 
+.submitbutton{
+    background-color: #4CAF50;
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  
   font-size: 16px;
 }
+.requirediv{
+    width: 100%;
+    height: 100vh;
+     background-color: rgb(0, 204, 255);
+} 
+

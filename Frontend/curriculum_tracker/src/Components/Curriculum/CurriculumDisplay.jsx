@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState,useEffect} from 'react';
-import Table from 'react-bootstrap/Table';
+//import Table from 'react-bootstrap/Table';
 import axios from 'axios';
 import './curriculumdisplay.css'
 import Navbardash from '../Userdashboard/Navbardash';

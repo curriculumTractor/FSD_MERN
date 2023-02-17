@@ -2,8 +2,7 @@ import React,{useState}from 'react'
 import {Link,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './styles.css'
-import Admin_navbar from '../Admindashboard/Admin_navbar';
-
+import Navbardash from '../Userdashboard/Navbardash';
 const Requirement = () => {
      
     
@@ -54,7 +53,9 @@ const Requirement = () => {
         }
         const res=await axios.post("http://localhost:3005/addrequirement",formData,config);
         console.log(res);
-
+        if (res.statusText==="OK") {
+            alert("Requirement successfully Added")
+        }    
     }
 
     
@@ -65,7 +66,7 @@ const Requirement = () => {
 
   return (
     <div>
-        <Admin_navbar/>
+        <Navbardash/>
           <div className="container">
                 <div className="row req-add bg-3">
                     <h1 class="adminreq">REQUIREMENT FORM</h1>

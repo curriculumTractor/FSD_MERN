@@ -102,48 +102,50 @@ app.post("/login",(req,res)=>{
    })
 
 
-<<<<<<< Updated upstream
+   
+
+   
+      
+   
+     // chatrrom
+   
+   require("dotenv").config();
+   const server = require("http").createServer();
+   
+   const io = require("socket.io")(server, {
+     cors: {
+       origin: "http://localhost:3000",
+       methods: ["GET", "POST"],
+     },
+   });
+   
+   io.on("connection", (client) => {
+     client.on("send_message", (data) => {
+       // Broadcast to all users
+       io.sockets.emit("receive_message", data);
+     });
+   });
+   
+   server.listen(process.env.PORT || 3005);
+   
+   
+   
+   app.get('/*', function (req, res) {
+       res.sendFile(path.join(__dirname + '/Frontend/index.html'));
+   });
+   // listen
+   app.listen(PORT,()=>{
+       console.log(`Server started listening to port ${PORT}`);
+   })
+   
+   
+   
+
+   
+
+
+
 // Requirement BY ADMIN
-=======
-// <<<<<<< Updated upstream
-   //REQUIREMENT 
-// =======
-//    chatrrom
-
-// require("dotenv").config();
-// const server = require("http").createServer();
-
-// const io = require("socket.io")(server, {
-//   cors: {
-//     origin: "http://localhost:3000",
-//     methods: ["GET", "POST"],
-//   },
-// });
-
-// io.on("connection", (client) => {
-//   client.on("send_message", (data) => {
-//     // Broadcast to all users
-//     io.sockets.emit("receive_message", data);
-//   });
-// });
-
-server.listen(process.env.PORT || 3005);
-
-
-
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/Frontend/index.html'));
-});
-// listen
-app.listen(PORT,()=>{
-    console.log(`Server started listening to port ${PORT}`);
-})
-
-
-
-//REQUIREMENT 
-
->>>>>>> Stashed changes
 //FILE UPLOAD
 const fileStorageEngine = Multer.diskStorage({
     destination: (req, file, cb) =>{

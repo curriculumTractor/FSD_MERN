@@ -9,6 +9,7 @@ const jwt = require("jsonwebtoken");
 const Multer = require('multer');
 const UserModel = require("./models/Users");
 const ReqModel = require('./models/requirement')
+const CurModel = require("./models/curriculum");
 
 const app =new Express();
 app.use("/uploads",Express.static("./uploads"));
@@ -101,7 +102,7 @@ app.post("/login",(req,res)=>{
    })
 
 
-   //REQUIREMENT 
+// Requirement BY ADMIN
 //FILE UPLOAD
 const fileStorageEngine = Multer.diskStorage({
     destination: (req, file, cb) =>{
@@ -146,7 +147,7 @@ app.post('/addrequirement',upload.single("photo"), async (req, res) => {
 })
 
 
-// faculty lisrequirement
+// faculty listrequirement
 app.get('/reqlist', async (req, res) => {
     try {
         let list = await ReqModel.find({ "status": "notrespond" }).sort({"_id":-1})
@@ -158,7 +159,55 @@ app.get('/reqlist', async (req, res) => {
     }
 })
 
+
+// curriculum upload by faculty
+const storage = Multer.diskStorage({
+    destination: function(req,file,cb){
+        cb(null,"./public/uploads")
+    },
+    filename:function(req,file,cb){
+        cb(null,file.originalname)
+    }
+ })
+
+ const Mul = Multer({storage: storage});
+
+ 
+
+
+ app.post('/curriculumupload',Mul.single('pdf'),(req,res)=>{
+    let comments = req.body.comments
+    let cur = 'uploads/' + req.file.originalname;
+    let temp = new CurModel({
+        pdfpath: cur,
+        comments: comments
+    })
+    temp.save((err,data)=>{
+        if (err) {
+            console.log(err);
+        } else {
+            res.json({"status":"success", "data":data})
+        }
+    })
+})
    
+// Download curriculum by admin
+app.get('/download/:id',(req,res)=>{
+    CurModel.find({_id:req.params.id},(err,data)=>{
+         if(err){
+             console.log(err)
+         }
+         else{
+             let x = __dirname+'/public/'+data[0].pdfpath;
+             res.download(x)
+         }
+    })
+})
+
+// ADMIN VIEW
+// ADMIN UPDATE
+
+// ADMIN DELETE
 
 
 app.get('/*', function (req, res) {

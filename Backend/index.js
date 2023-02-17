@@ -158,8 +158,20 @@ app.get('/reqlist', async (req, res) => {
     }
 })
 
-// display past curriculum
+// display past curriculum by faculty
 app.get('/pastlist', async (req, res) => {
+    try {
+        let list = await CurModel.find({ "status": "notrespond" }).sort({"_id":-1})
+
+        res.send(list)
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+// display past curriculum
+app.get('/pastlistbyfaculty', async (req, res) => {
     try {
         let list = await CurModel.find({ "status": "notrespond" }).sort({"_id":-1})
 

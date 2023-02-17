@@ -17,7 +17,7 @@ const Admin = () => {
       <a class="active" href="/user"> Dashboard</a>
       <a href="/aprofile"><i class="fa-solid fa-user"></i>&nbsp;&nbsp; My Profile</a>
       <a href="/requirement"><i class="fa-solid fa-message"></i>&nbsp;&nbsp; Requirements</a>
-      <a href="/recvrqrmnt"><i class="fa-solid fa-sheet-plastic"></i>&nbsp;&nbsp; Curriculum</a>
+      <a href="/viewcurriculm"><i class="fa-solid fa-sheet-plastic"></i>&nbsp;&nbsp; Curriculum</a>
       <span className='greenbtn'><a href='/fileupload'><button className='btn btn-success'>New Curriculum</button></a></span>
     </div>
             {/* sidebar */}

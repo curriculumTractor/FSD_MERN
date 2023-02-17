@@ -247,6 +247,28 @@ app.get('/download/:id',(req,res)=>{
     })
 })
 
+//DISPLAY curriculum
+
+
+
+
+app.post('/displaycurriculum',(req, res) => {
+
+    
+    
+    CurModel.find(
+        (err,data)=>{
+            
+            if (err) {
+                res.json({"status":"Error","Error":err})
+            } else {
+               res.json(data)  
+            }
+        }
+    )
+
+})
+
 // ADMIN VIEW
 // ADMIN UPDATE
 

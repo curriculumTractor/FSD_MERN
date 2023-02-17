@@ -32,7 +32,7 @@ function App() {
         <Route path='/requirement' exact element={<Requirement />} />
         <Route path='/recvrqrmnt' exact element={<RecieveReqrmnt/>} />
         <Route path='search' exact element={<Search/>} />
-        <Route path='curriculumdisplay' exact element={<CurriculumDisplay/>} />
+        <Route path='/curriculumdisplay' exact element={<CurriculumDisplay/>} />
        
 
       

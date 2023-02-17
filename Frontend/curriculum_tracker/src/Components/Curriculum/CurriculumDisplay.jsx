@@ -23,7 +23,7 @@ const CurriculumDisplay = () => {
       "file":''
       
     }
-    axios.post('"http://localhost:3005/fileupload"',userData)
+    axios.post('http://localhost:3005/displaycurriculum',userData)
     .then((response)=>{
       console.log(response.data)
       setCurriculum(response.data)
@@ -59,10 +59,9 @@ const CurriculumDisplay = () => {
                     <tbody class="curriculumbody">
                       {curriculum.map((value,index)=>{
                         return <tr>
-                            {/* <th scope="row">{index + 1}</th> */}
-                            {/* <td>{value.reqname}</td>
-                            <td>{value.area}</td> */}
-                            <td>{value.imgpath}</td>
+                            
+                            <td>{value.pdfpath}</td>
+                            <td><button>DOWNLOAD</button></td>
                             
                             
                           </tr>

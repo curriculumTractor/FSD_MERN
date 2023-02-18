@@ -14,7 +14,7 @@ import RecieveReqrmnt from './Components/Userdashboard/Requirement/RecieveReqrmn
 import Search from './Components/Search/Search';
 import Aprofile from './Components/Profile/Aprofile';
 import CurriculumDisplay from './Components/Curriculum/CurriculumDisplay';
-import Fileupload from './Components/Userdashboard/FileUplod/Fileupload';
+import Fileupload from './Components/Userdashboard/Fileupload';
 import IsLoad from './Components/IsLoad';
 import ViewCurriculm from './Components/ViewAll_curriculm/ViewCurriculm';
 

@@ -1,7 +1,8 @@
 import React,{useState}from 'react'
 import {Link,useNavigate} from 'react-router-dom';
 import axios from 'axios';
-import './styles.css'
+//import './styles.css'
+import './reqstyles.css'
 import Navbardash from '../Userdashboard/Navbardash';
 const Requirement = () => {
      
@@ -65,22 +66,26 @@ const Requirement = () => {
     
 
   return (
-    <div>
+    <div  >
         <Navbardash/>
-          <div className="container">
+          <div className="container fluid reqdiv">
                 <div className="row req-add bg-3">
+                    <section class="requirebox" >
+                
+                
                     <h1 class="adminreq">REQUIREMENT FORM</h1>
                     <div className="col col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                       
                         <div className="col col-sm-8 req">
                             <form method="" className="form-horizontal" class="form-horizontal" >
-                                <div className="form-group">
+                                <div className="form-group requirename">
                                     <label className="control-label col-sm-4">Requirement Name</label>
                                     <div className="col-sm-8">
-                                        <input type="text" name="reqname" size="" placeholder='' onChange={(e)=>setReqname(e.target.value)}/>
+                                       <input class="requirename" type="text" name="reqname" size="" placeholder='Requirement Name' onChange={(e)=>setReqname(e.target.value)}/>
                                     </div>
                                 </div>
                                 
-                                <div className="form-group">
+                                <div className="form-group requirearea">
                                     <label className="control-label col-sm-4">Training Area</label>
                                     <div className="col-sm-8">
                                         {/* <input type="text" name="area" placeholder=''/> */}
@@ -94,17 +99,17 @@ const Requirement = () => {
                                         </select>
                                     </div>
                                 </div>
-                                <div className="form-group">
+                                <div className="form-group1 requireinstitution">
                                     <label className="control-label col-sm-4">Instituition/Cooperate</label>
                                     <div className="col-sm-8">
-                                        <input type="text" size="30" placeholder='Institution' name="institution"  onChange={(e)=>setInstitution(e.target.value)}/>
+                                       <input class="reqname"type="text" size="" placeholder='Institution' name="institution"  onChange={(e)=>setInstitution(e.target.value)}/>
                                     </div>
                                 </div>
-                                <div className="form-group">
+                                <div className="form-group requirecatagory">
                                     <label className="control-label col-sm-4">Catagory</label>
                                     <div className="col-sm-8">
                                         {/* <input type="text" name="catagory" placeholder=''/> */}
-                                        <select name="catagory"  onChange={(e)=>setCatagory(e.target.value)}>
+                                       <select name="catagory"  onChange={(e)=>setCatagory(e.target.value)}>
                                             <option>RETAIL</option>
                                              <option>ACADEMIC</option>
                                              <option>CORPORATE</option>
@@ -113,16 +118,16 @@ const Requirement = () => {
                                         </select>
                                     </div>
                                 </div>
-                                <div className="form-group">
+                                <div className="form-group requirehours">
                                     <label className="control-label col-sm-4">Number of Hours</label>
                                     <div className="col-sm-8">
-                                        <input type="text" placeholder='Hours ' size="30" name="hours"  onChange={(e)=>setHours(e.target.value)}/>
+                                       <input type="text" placeholder='Hours ' size="30" name="hours"  onChange={(e)=>setHours(e.target.value)}/>
                                     </div>
                                 </div>
-                                <div className="form-group">
+                                <div className="form-group requireupload ">
                                     <label className="control-label col-sm-4">File Upload</label>
                                     <div className="col-sm-8">
-                                        <input type="file" placeholder=' '  name="photo" onChange={setimgfile}/>
+                                       <input type="file" placeholder=' '  name="photo" onChange={setimgfile}/>
                                     </div>
                                 </div>
                                
@@ -135,7 +140,9 @@ const Requirement = () => {
                                 </div>
                             </form>
                         </div>
+                        
                     </div>
+                    </section>
                 </div>
             </div>
     </div>

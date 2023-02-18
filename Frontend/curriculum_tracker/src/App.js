@@ -14,9 +14,16 @@ import RecieveReqrmnt from './Components/Userdashboard/Requirement/RecieveReqrmn
 import Search from './Components/Search/Search';
 import Aprofile from './Components/Profile/Aprofile';
 import CurriculumDisplay from './Components/Curriculum/CurriculumDisplay';
+<<<<<<< HEAD
 import Fileupload from './Components/Userdashboard/Fileupload';
 import IsLoad from './Components/IsLoad';
+=======
+
+// import IsLoad from './Components/IsLoad';
+>>>>>>> 84c63f32b372ebd621c51d75662c58b21af6a9ba
 import ViewCurriculm from './Components/ViewAll_curriculm/ViewCurriculm';
+import ViewallFaculty from './Components/ViewAll_curriculm/ViewallFaculty';
+import Fileupload from './Components/Userdashboard/Fileupload';
 
 
 
@@ -27,21 +34,23 @@ function App() {
         <Route path='/' exact element={<Home />} />
         <Route path='/login' exact element={<Login />} />
         <Route path='/signup' exact element={<Signup />} />
-        <Route path='search' exact element={<Search/>} />
-        <Route path='viewcurriculm' exact element={<ViewCurriculm/>} />
+        <Route path='/search' exact element={<Search/>} />
+        
         
 
         <Route path='/admin' exact element={<Admin />} />
         <Route path='/aprofile' exact element={<Aprofile />} />
         <Route path='/requirement' exact element={<Requirement />} />
         <Route path='/curriculumdisplay' exact element={<CurriculumDisplay/>} />
+        <Route path='/viewcurriculm' exact element={<ViewCurriculm/>} />
 
         <Route path='/user' exact element={<User />} />
         <Route path='/profile' exact element={<Profile />} />
         <Route path='/recvrqrmnt' exact element={<RecieveReqrmnt/>} />
-        <Route path='fileupload' exact element={<Fileupload/>} />
-       
         
+        <Route path='/viewallfaculty' exact element={<ViewallFaculty/>} />
+       
+        <Route path='/uploadcurriculum' exact element={<Fileupload/>} />
        
 
       

@@ -1,33 +1,32 @@
-import axios from 'axios';
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Navbardash from '../Userdashboard/Navbardash'
 
-const ViewCurriculm = () => {
+const ViewallFaculty = () => {
 
-        const [viewCurriculum,setViewCurriculm] = useState([]);
-        useEffect(
-            ()=>{
-                getData();
-            },[]
+    const [viewallCurriculum,setViewallCurriculm] = useState([])
+    useEffect(()=>{
+        getData();
+
+    },[]
+    )
+    const getData=()=>{
+        axios.get("http://localhost:3005/pastlistbyfaculty")
+        .then(
+            (response)=>{
+                
+                setViewallCurriculm(response.data)
+                
+            }
+
+        ).catch(
+            (error)=>{
+                console.log("error in loading data"+error);
+
+            }
         )
+    }
 
-        const getData=()=>{
-            axios.get("http://localhost:3005/pastlist")
-            .then(
-                (response)=>{
-                    
-                    setViewCurriculm(response.data)
-                    
-                }
-    
-            ).catch(
-                (error)=>{
-                    console.log("error in loading data"+error);
-    
-                }
-            )
-
-        }
 
   return (
     <div>
@@ -47,10 +46,9 @@ const ViewCurriculm = () => {
                </tr>
              </thead>
              <tbody>
-              {viewCurriculum.map(
+              {viewallCurriculum.map(
                (value,index)=>{
                   return <tr>
-                    
                    <td>{value.pdfpath}</td>
                    <td><button>DOWNLOAD</button></td>
                    
@@ -68,4 +66,4 @@ const ViewCurriculm = () => {
   )
 }
 
-export default ViewCurriculm
+export default ViewallFaculty

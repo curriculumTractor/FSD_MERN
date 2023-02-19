@@ -51,7 +51,7 @@ function App() {
        
        
 
-        <Route path='/uploadcurriculum' exact element={<Fileupload/>} />
+      
         
 
       

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Navbardash from './Navbardash'
+import Navbardash from '../Navbardash'
 import axios from "axios";
 
 const Fileupload = () => {

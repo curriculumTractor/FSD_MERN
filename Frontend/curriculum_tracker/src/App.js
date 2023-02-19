@@ -14,6 +14,9 @@ import RecieveReqrmnt from './Components/Userdashboard/Requirement/RecieveReqrmn
 import Search from './Components/Search/Search';
 import Aprofile from './Components/Profile/Aprofile';
 import CurriculumDisplay from './Components/Curriculum/CurriculumDisplay';
+
+
+
 import ViewCurriculm from './Components/ViewAll_curriculm/ViewCurriculm';
 import ViewallFaculty from './Components/ViewAll_curriculm/ViewallFaculty';
 import Fileupload from './Components/Userdashboard/FileUplod/Fileupload';
@@ -47,7 +50,9 @@ function App() {
         <Route path='/fileupload' exact element ={<Fileupload/>}/>
        
        
-       
+
+        <Route path='/uploadcurriculum' exact element={<Fileupload/>} />
+        
 
       
       </Routes>

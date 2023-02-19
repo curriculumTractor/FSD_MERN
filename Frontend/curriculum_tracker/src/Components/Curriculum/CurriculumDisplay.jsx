@@ -35,6 +35,7 @@ const CurriculumDisplay = () => {
   )
   }
 
+
   return (
     <div>
       <Navbardash/>
@@ -62,8 +63,9 @@ const CurriculumDisplay = () => {
                             <td>{value.comments}</td>
                             <td>{value.pdfpath}</td>
                             <td><button>DOWNLOAD</button></td>
-                            
-                            
+                            <td><button>APPROVE</button></td>
+                            <td><button>REJECT</button></td>
+                            <td><button>EDIT</button></td>
                           </tr>
                       }
                       )}

@@ -4,24 +4,26 @@ import axios from 'axios'
 import styles from "./styles.module.css"
 
 const Login = () => {
+
+	
+
 	const navigate=useNavigate();
 
 	const [email ,setEmail ]=useState('')
 	const [password,setPassword]=useState('')
 
-	const userAuthentication =(e)=>{
-		e.preventDefault()
+	
+		
 		const userData={
 			"email ":email ,
 			"password":password,
-		
 		}
 		console.log(userData)
 
 		axios.post("http://localhost:3005/login",userData)
 		.then((response)=>{
 			console.log(response.data)
-			if(response.data.status=="success"){
+			if(response.data.status==="success"){
 				let token=response.data.token
 				let userId=response.data.data[0]._id
 				
@@ -41,7 +43,7 @@ const Login = () => {
 			
 			
 		})
-	}
+	
   return (
     
 	<div className={styles.login_container}>
@@ -68,7 +70,7 @@ const Login = () => {
 					className={styles.input}
 				/>
 				
-				<button type="submit" className={styles.green_btn} onClick={userAuthentication}>
+				<button type="submit" className={styles.green_btn} onClick={Login}>
 					Sing In
 				</button>
 			</form>

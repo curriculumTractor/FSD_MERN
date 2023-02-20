@@ -27,25 +27,39 @@ const Signin = () => {
                 body: JSON.stringify({ email: credentials.email, password: credentials.password, role: credentials.role })
             });
             const json = await response.json();
-        console.log(json);
-     
-         if  (json.success && role === "admin") {
-            //save the auth token and redirect
-            localStorage.setItem('token', json.token);
-            navigate("/admin");
-            toast.success("login Successfully");
+            console.log(json);
+            console.log(json.status)
+            if(json.status == "success"){
+                
+                if (credentials.role==="admin") {
+                    localStorage.setItem('token', json.token);
+                    navigate("/admin");
+                    toast.success("login Successfully");
+                } else {
+                    localStorage.setItem('token', json.token);
+                    navigate("/user");
+                }
+            }else{
+                toast.error("invalid credentials");
+            }
         }
-        else if  (json.success && role === "user") {
-             //save the auth token and redirect
-             localStorage.setItem('token', json.token);
-             navigate("/user");
-            //  toast.success("login Successfully")
-        }
+        //  if  (json.success && role === "admin") {
+        //     //save the auth token and redirect
+        //     localStorage.setItem('token', json.token);
+        //     navigate("/admin");
+        //     toast.success("login Successfully");
+        // }
+        // else if  (json.success && role === "user") {
+        //      //save the auth token and redirect
+        //      localStorage.setItem('token', json.token);
+        //      navigate("/user");
+        //     //  toast.success("login Successfully")
+        // }
          
-        else{
-            toast.error("invalid credentials");
-        }
-    }
+    //     else{
+    //         toast.error("invalid credentials");
+    //     }
+    // }
 
     const onChange = (e) => {
         setCredentials(

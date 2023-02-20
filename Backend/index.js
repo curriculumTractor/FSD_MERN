@@ -68,10 +68,10 @@ app.post("/login",(req,res)=>{
        var password=req.body.password;
        var role=req.body.role;
         
-       if(email=="admin@gmail.com",role=="admin"){
-        res.json({message :"admin login"})
-       }
-        else{
+    //    if(email=="admin@gmail.com",role=="admin"){
+    //     res.json({message :"admin login"})
+    //    }
+    //     else{
             UserModel.find({ email : email },(err,data)=>{
             if(data.length>0){
                
@@ -97,7 +97,8 @@ app.post("/login",(req,res)=>{
                res.json({"Status":"Failed to Login","data":"Invalid Email id"})
            }
        })
-   }}catch(error){
+//    }
+}catch(error){
        console.log(error)
    }
     

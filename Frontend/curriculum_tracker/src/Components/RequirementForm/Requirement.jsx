@@ -3,7 +3,8 @@ import {Link,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 //import './styles.css'
 import './reqstyles.css'
-import Navbardash from '../Userdashboard/Navbardash';
+// import Navbardash from '../Userdashboard/Navbardash';
+import Admin_navbar from '../Admindashboard/Admin_navbar';
 const Requirement = () => {
      
     
@@ -67,9 +68,10 @@ const Requirement = () => {
 
   return (
     <div  >
-        <Navbardash/>
-          <div className="container fluid reqdiv">
-                <div className="row req-add bg-3">
+        
+        <Admin_navbar/>
+          <div className="container fluid reqdiv ">
+                <div className="row req-add bg-3 reqlist">
                     <section class="requirebox" >
                 
                 

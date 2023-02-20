@@ -10,6 +10,7 @@ const Multer = require('multer');
 const UserModel = require("./models/Users");
 const ReqModel = require('./models/requirement')
 const CurModel = require("./models/curriculum");
+const SaveModel = require("./models/savecurriculum")
 const ErrorMessage = require("./config/errors");
 
 const app =new Express();
@@ -132,16 +133,26 @@ app.post('/addrequirement',upload.single("photo"), async (req, res) => {
 
         }
         console.log(data1);
-        let requirements = await ReqModel.findOne({ reqname: req.body.reqname })
-        if (!requirements) {
-            const newReq = new ReqModel(data1);
-            const saveReq = await newReq.save();
-            res.json(saveReq);
-            console.log(saveReq)
-        }
-        else {
-            res.json({ message: "Requirement already added" });
-        }
+        const newReq = new ReqModel(data1);
+        newReq.save((err,data)=>{
+            if (err) {
+                res.json({"error":err});
+            } else {
+                res.json({"status":"success","data":data})
+            }
+        });
+            
+            
+        // let requirements = await ReqModel.findOne({ reqname: req.body.reqname })
+        // if (!requirements) {
+        //     const newReq = new ReqModel(data1);
+        //     const saveReq = await newReq.save();
+        //     res.json(saveReq);
+        //     console.log(saveReq)
+        // }
+        // else {
+        //     res.json({ message: "Requirement already added" });
+        // }
     } catch (error) {
         console.log(error)
 
@@ -161,10 +172,10 @@ app.get('/reqlist', async (req, res) => {
     }
 })
 
-// display past curriculum by faculty
+// display past curriculum by admin
 app.get('/pastlist',async (req, res) => {
     try {
-        let curr = await CurModel.find()
+        let curr = await CurModel.find({"status":"approved"})
         res.send(curr)
 
     } catch (error) {
@@ -175,7 +186,7 @@ app.get('/pastlist',async (req, res) => {
 // display past curriculum
 app.get('/pastlistbyfaculty',async (req, res) => {
     try {
-        let curr = await CurModel.find()
+        let curr = await CurModel.find({"status":"approved"})
         res.send(curr)
 
     } catch (error) {
@@ -219,7 +230,7 @@ app.use(Express.static(pathh));
    
 // Download curriculum by admin
 app.get('/download/:id',(req,res)=>{
-    CurModel.findById({_id:req.params._id},(err,data)=>{
+    CurModel.find({_id:req.params.id},(err,data)=>{
          if(err){
              console.log(err)
          }
@@ -289,8 +300,40 @@ app.put('/curriculum/:id/status',async (req,res)=>{
     });
    }
 })
-// admin delete
 
+// admin delete
+app.delete('/curricul/delete/:id',(req,res)=>{
+    let id = req.params.id;
+    CurModel.deleteOne(
+        ({_id:id},(err,data)=>{
+            if (err) {
+                res.json({"status":"error","error": err});
+            } else {
+                res.json({"status":"delete","data":data});
+            }
+        })
+    )
+})
+
+// approve curriculum
+app.post('/curupdate',(req,res)=>{
+    let data =  req.body
+    
+    const currupdate = new SaveModel(data);
+    currupdate.save(
+    (err,data)=>{
+        if (err) {
+            res.json({"status":"error","error": err});
+        } else {
+            res.json({"status":"saved","data":data});
+        }
+    })
+    } )
+
+// approved list
+app.get('/approvedlist',(req,res)=>{
+    console.log("data")
+})
 // display curriculum by status
 app.get("/curriculum", async (req, res) => {
     try {

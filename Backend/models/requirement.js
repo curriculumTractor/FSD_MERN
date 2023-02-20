@@ -27,7 +27,7 @@ const ReqSchema=new Schema({
     },
     imgpath : {
         type : String,
-        required : true
+        
     },
     date:{
         type:Date

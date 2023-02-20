@@ -20,6 +20,7 @@ import CurriculumDisplay from './Components/Curriculum/CurriculumDisplay';
 import ViewCurriculm from './Components/ViewAll_curriculm/ViewCurriculm';
 import ViewallFaculty from './Components/ViewAll_curriculm/ViewallFaculty';
 import Fileupload from './Components/Userdashboard/FileUplod/Fileupload';
+import Signin from './Components/Login/Signin';
 
 
 
@@ -32,7 +33,7 @@ function App() {
         <Route path='/login' exact element={<Login />} />
         <Route path='/signup' exact element={<Signup />} />
         <Route path='/search' exact element={<Search/>} />
-        
+        <Route path='/signin' exact element={<Signin/>}/>
         
 
         <Route path='/admin' exact element={<Admin />} />

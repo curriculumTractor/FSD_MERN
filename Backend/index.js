@@ -66,8 +66,9 @@ app.post("/login",(req,res)=>{
     try{  
        var email =req.body.email;
        var password=req.body.password;
+       var role=req.body.role;
         
-       if(email=="admin@gmail.com",password=="admin"){
+       if(email=="admin@gmail.com",role=="admin"){
         res.json({message :"admin login"})
        }
         else{

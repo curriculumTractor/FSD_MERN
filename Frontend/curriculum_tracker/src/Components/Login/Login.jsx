@@ -7,55 +7,92 @@ const Login = () => {
 
 	
 
-	const navigate=useNavigate();
+	const [credentials, setCredentials] = useState(
+        {
+         email: "", 
+         password: "", 
+         role: ""
+        })
+        let role = ["admin", "user"]
+       const navigate =useNavigate();
+     
 
-	const [email ,setEmail ]=useState('')
-	const [password,setPassword]=useState('')
+        const handleSubmit = async (e) => {
+            e.preventDefault();
+            const response = await fetch("http://localhost:3005/login", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+    
+                },
+                body: JSON.stringify({ email: credentials.email, password: credentials.password, role: credentials.role })
+            });
+            const json = await response.json();
+            console.log(json);
+            console.log(json.status)
+            if(json.status == "success"){
+                
+                if (credentials.role==="admin") {
+                    localStorage.setItem('token', json.token);
+                    navigate("/admin");
+                    toast.success("login Successfully");
+                } else {
+                    localStorage.setItem('token', json.token);
+                    navigate("/user");
+                }
+            }else{
+                toast.error("invalid credentials");
+            }
+        }
+        //  if  (json.success && role === "admin") {
+        //     //save the auth token and redirect
+        //     localStorage.setItem('token', json.token);
+        //     navigate("/admin");
+        //     toast.success("login Successfully");
+        // }
+        // else if  (json.success && role === "user") {
+        //      //save the auth token and redirect
+        //      localStorage.setItem('token', json.token);
+        //      navigate("/user");
+        //     //  toast.success("login Successfully")
+        // }
+         
+    //     else{
+    //         toast.error("invalid credentials");
+    //     }
+    // }
 
-	
-		
-		const userData={
-			"email ":email ,
-			"password":password,
-		}
-		console.log(userData)
-
-		axios.post("http://localhost:3005/login",userData)
-		.then((response)=>{
-			console.log(response.data)
-			if(response.data.status==="success"){
-				let token=response.data.token
-				let userId=response.data.data[0]._id
-				
-				alert("valid user")
-
-				sessionStorage.setItem("userId",userId);
-				sessionStorage.setItem("token",token);
-				console.log(userData)
-				if(userData.role==='admin'){
-					navigate('/admin')
-				}else{
-					navigate('/user')
-				}
-			}else{
-				alert("invalid user")
-			}
-			
-			
-		})
+    const onChange = (e) => {
+        setCredentials(
+            { ...credentials,
+                 [e.target.name]: e.target.value 
+                });
+    }
 	
   return (
     
 	<div className={styles.login_container}>
 	<div className={styles.login_form_container}>
 		<div className={styles.left}>
-			<form className={styles.form_container} >
+			<form className={styles.form_container} onSubmit={handleSubmit}>
 				<h1>Login to Your Account</h1>
+
+				<div>
+                    <select className="form-select form-select-lg" required={true} id="role" name="role" value={credentials.role}  onChange={onChange} style={{ backgroundColor: "aliceblue", fontWeight: "500" }}>
+                        <option defaultValue >Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="employee">User</option>
+                       
+                    </select>
+                  </div>
+
+
 				<input
 					type="email"
 					placeholder="Email"
 					name="email"
-					onChange={(e)=>setEmail(e.target.value)}
+					value={credentials.email} 
+					onChange={onChange}
 					
 					required
 					className={styles.input}
@@ -64,13 +101,14 @@ const Login = () => {
 					type="password"
 					placeholder="Password"
 					name="password"
-					onChange={(e)=>setPassword(e.target.value)}
+					value={credentials.password} 
+					onChange={onChange} 
 					
 					required
 					className={styles.input}
 				/>
 				
-				<button type="submit" className={styles.green_btn} onClick={Login}>
+				<button type="submit" className={styles.green_btn} >
 					Sing In
 				</button>
 			</form>

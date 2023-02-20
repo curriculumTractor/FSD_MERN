@@ -39,7 +39,7 @@ const ViewallFaculty = () => {
                    <table className="table">
              <thead>
                <tr>
-               <th scope="col">Sl No</th>
+               
                  <th scope="col">Past Curricculum</th>
                  <th scope="col">Download</th>
                  

@@ -1,5 +1,12 @@
 .requirebox{
     background-color: rgb(220, 233, 245);
-      align-items: center;
+    align-items: stretch;
     
+    
+}
+.reqlist{
+  align-items: center;
+  padding-top: 6%;
+  padding-left: 10%;
+  width: 50%;
 }

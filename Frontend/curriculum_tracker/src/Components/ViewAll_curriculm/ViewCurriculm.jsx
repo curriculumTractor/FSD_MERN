@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import Navbardash from '../Userdashboard/Navbardash'
+import Admin_navbar from '../Admindashboard/Admin_navbar';
+
 
 const ViewCurriculm = () => {
 
@@ -31,7 +32,8 @@ const ViewCurriculm = () => {
 
   return (
     <div>
-        <Navbardash/>
+        
+        <Admin_navbar/>
            
                    <div className="container">
                    
@@ -40,7 +42,7 @@ const ViewCurriculm = () => {
                    <table className="table">
              <thead>
                <tr>
-               <th scope="col">Sl No</th>
+               
                  <th scope="col">Past Curricculum</th>
                  <th scope="col">Download</th>
                  

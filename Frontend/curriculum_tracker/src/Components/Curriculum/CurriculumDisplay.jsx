@@ -24,6 +24,10 @@ const CurriculumDisplay = () => {
       
       "file":'',
       "comments":'',
+      "title":'',
+      "area":'',
+      "category":'',
+      "institution":'',
       "id":''
     }
     axios.post('http://localhost:3005/displaycurriculum',userData)
@@ -80,6 +84,11 @@ const CurriculumDisplay = () => {
                   <table class="table table-success table-striped curriculumtablelist" >
                     <thead>
                       <tr className="bg-dark text-white" class="bg-gray-50 currrow">
+                      <th scope="col">Name</th>
+                      <th scope="col">Area Of Training</th>
+                    
+                      <th scope="col">Category</th>
+                      <th scope="col">Institution</th>
                       <th scope="col">Comments</th>
                         <th scope="col">Curriculum</th>
                         
@@ -91,6 +100,10 @@ const CurriculumDisplay = () => {
                     <tbody class="curriculumbody">
                       {curriculum.map((value,index)=>{
                         return <tr>
+                            <td>{value.title}</td>
+                            <td>{value.area}</td>
+                            <td>{value.category}</td>
+                            <td>{value.institution}</td>
                             <td>{value.comments}</td>
                             <td>{value.pdfpath}</td>
                             <td><button>DOWNLOAD</button></td>

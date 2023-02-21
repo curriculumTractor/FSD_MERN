@@ -183,7 +183,7 @@ app.get('/pastlist',async (req, res) => {
     }
 })
 
-// display past curriculum
+// display past curriculum by faculty
 app.get('/pastlistbyfaculty',async (req, res) => {
     try {
         let curr = await CurModel.find({"status":"approved"})
@@ -214,10 +214,19 @@ app.use(Express.static(pathh));
 
  app.post('/curriculumupload',Mul.single('pdf'),(req,res)=>{
     let comments = req.body.comments
+    let title = req.body.title
+    let area = req.body.area
+    let category = req.body.category
+    let institution = req.body.institution
     let cur = 'uploads/' + req.file.originalname;
     let temp = new CurModel({
         pdfpath: cur,
-        comments: comments
+        comments: comments,
+        title: title,
+        area:area,
+        category:category,
+        institution:institution,
+
     })
     temp.save((err,data)=>{
         if (err) {

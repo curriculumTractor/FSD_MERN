@@ -8,7 +8,24 @@ const CurSchema = new Schema({
     },
     comments: {
         type: String,
+       
      },
+     title: {
+        type : String ,
+        required : true
+    },
+    area: {
+        type : String ,
+        required : true
+    },
+    institution: {
+        type : String ,
+        required : true
+    },
+    category: {
+        type : String ,
+        required : true
+    },
     status: {
         type: String,
         default: "notapproved"  

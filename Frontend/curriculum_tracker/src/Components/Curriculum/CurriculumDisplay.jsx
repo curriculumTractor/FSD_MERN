@@ -70,6 +70,21 @@ const CurriculumDisplay = () => {
           console.log("The error loading data"+error)
       })
   }
+  
+  const downloadCurriculum=()=>{
+    axios.get(`http://localhost:3005/download/${id}`)
+    .then((response)=>{
+      console.log(response.data);
+      setCurriculum(response.data);
+      alert("Successfully downloaded");
+      navigate('/curriculumdisplay')
+     }) 
+     .catch(
+      (error)=>{
+          console.log("The error loading data"+error)
+      })
+  }
+
   return (
     <div>
       
@@ -106,7 +121,7 @@ const CurriculumDisplay = () => {
                             <td>{value.institution}</td>
                             <td>{value.comments}</td>
                             <td>{value.pdfpath}</td>
-                            <td><button>DOWNLOAD</button></td>
+                            <td><button onClick={downloadCurriculum}>DOWNLOAD</button></td>
                             <td><button onClick={UpdateCurriculum}>APPROVE</button></td>
                             <td><button onClick={DeleteCurriculum}>REJECT</button></td>
                            

@@ -201,7 +201,7 @@ const storage = Multer.diskStorage({
         cb(null,"./public/uploads")
     },
     filename:function(req,file,cb){
-        cb(null,file.originalname)
+        cb(null,file.originalname + Date.now().toString()+'.pdf')
     }
  })
 
@@ -212,34 +212,66 @@ const pathh = path.resolve(__dirname,'public');
 app.use(Express.static(pathh));
 
 
- app.post('/curriculumupload',Mul.single('pdf'),(req,res)=>{
-    let comments = req.body.comments
-    let title = req.body.title
-    let area = req.body.area
-    let category = req.body.category
-    let institution = req.body.institution
-    let cur = 'uploads/' + req.file.originalname;
-    let temp = new CurModel({
-        pdfpath: cur,
-        comments: comments,
-        title: title,
-        area:area,
-        category:category,
-        institution:institution,
+//  app.post('/curriculumupload',Mul.single('pdf'),(req,res)=>{
+//     let cur =  req.file.originalname;
+//     let comments = req.body.comments
+//     let title = req.body.title
+//     let area = req.body.area
+//     let category = req.body.category
+//     let institution = req.body.institution
+    
+//     let temp = new CurModel({
+//         pdfpath: cur,
+//         comments: comments,
+//         title: title,
+//         area:area,
+//         category:category,
+//         institution:institution,
 
-    })
-    temp.save((err,data)=>{
-        if (err) {
-            console.log(err);
-        } else {
-            res.json({"status":"success", "data":data})
-        }
-    })
-})
+//     })
+//     temp.save((err,data)=>{
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             res.json({"status":"success", "data":data})
+//         }
+//     })
+// })
+
+
    
+// new upload
+    app.post('/curriculumupload',Mul.single('pdf'),(req,res)=>{
+        let cur = 'uploads/' + req.file.originalname;
+        let comments = req.body.comments;
+        let title = req.body.title;
+        let area = req.body.area; 
+        let institution = req.body.institution;
+        let category = req.body.category;
+        let temp = new CurModel({
+            pdfpath: cur,
+            comments:comments,
+            title:title,
+            area:area,
+            institution:institution,
+            category:category
+        })
+        temp.save((err,data)=>{
+            if (err) {
+                console.log(err);
+            } else {
+                res.json({"status":"success", "data":data})
+            }
+        })
+    })
+
 // Download curriculum by admin
 app.get('/download/:id',(req,res)=>{
-    CurModel.find({_id:req.params.id},(err,data)=>{
+    // var hex = /[0-9A-Fa-f]{6}/g;
+    // var id ;
+    // id = (hex.test(id))? ObjectId(_id) : id;
+
+    CurModel.findById({_id:req.params.id},(err,data)=>{
          if(err){
              console.log(err)
          }

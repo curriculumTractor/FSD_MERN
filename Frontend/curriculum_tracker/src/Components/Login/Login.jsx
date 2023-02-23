@@ -53,50 +53,57 @@ const Login = () => {
   return (
     
 	<div className={styles.login_container}>
-	    <div className={styles.login_form_container}>
-		    <div className={styles.left}>
-			    <form className={styles.form_container} onSubmit={handleSubmit}>
-				    <h1>Login to Your Account</h1>
-                    <div>
-                        <select className="form-select form-select-lg" required={true} id="role" name="role" value={credentials.role}  onChange={onChange} style={{ backgroundColor: "aliceblue", fontWeight: "500" }}>
-                            <option defaultValue >Select Role</option>
-                            <option value="admin">Admin</option>
-                            <option value="employee">User</option>
-                        </select>
-                    </div>
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        name="email"
-                        value={credentials.email} 
-                        onChange={onChange}
-                        required
-                        className={styles.input}
-				    />
-				    <input
-                        type="password"
-                        placeholder="Password"
-                        name="password"
-                        value={credentials.password} 
-                        onChange={onChange} 
-                        required
-                        className={styles.input}
-				    />
-				    <button type="submit" className={styles.green_btn} >
-					    Sign In
-				    </button>
-			    </form>
-		    </div>
-		    <div className={styles.right}>
-			    <h1>New Here ?</h1>
-			    <Link to="/signup">
-				    <button type="button" className={styles.white_btn} >
-					    Sign Up
-				    </button>
-			    </Link>
-		    </div>
-	    </div>
-    </div>
+	<div className={styles.login_form_container}>
+		<div className={styles.left}>
+			<form className={styles.form_container} onSubmit={handleSubmit}>
+				<h1>Login to Your Account</h1>
+
+				<div>
+                    <select className="form-select form-select-lg" required={true} id="role" name="role" value={credentials.role}  onChange={onChange} style={{ backgroundColor: "aliceblue", fontWeight: "500" }}>
+                        <option defaultValue >Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="employee">User</option>
+                       
+                    </select>
+                  </div>
+
+
+				<input
+					type="email"
+					placeholder="Email"
+					name="email"
+					value={credentials.email} 
+					onChange={onChange}
+					
+					required
+					className={styles.input}
+				/>
+				<input
+					type="password"
+					placeholder="Password"
+					name="password"
+					value={credentials.password} 
+					onChange={onChange} 
+					
+					required
+					className={styles.input}
+				/>
+				
+				<button type="submit" className={styles.green_btn} >
+					Sign In
+				</button>
+			</form>
+		</div>
+		<div className={styles.right}>
+			<h1>New Here ?</h1>
+			<Link to="/signup">
+				<button type="button" className={styles.white_btn} >
+					Sign Up
+				</button>
+			</Link>
+		</div>
+	</div>
+</div>
   )
 }
 

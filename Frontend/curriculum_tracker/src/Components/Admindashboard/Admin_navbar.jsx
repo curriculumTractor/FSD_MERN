@@ -30,7 +30,7 @@ const Admin_navbar = () => {
                 </li>
 
 
-              {/* Profile */}
+           
 
                         </ul>
 

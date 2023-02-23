@@ -22,6 +22,7 @@
   .nav-item a:hover{
     background-color: #f9f0f0;
     border-radius: 2px;
+    background: none;
   }
   .notifydrop a{
     color:#261e48

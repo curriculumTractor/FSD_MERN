@@ -4,26 +4,30 @@ import Navbardash from '../Userdashboard/Navbardash'
 
 const ViewallFaculty = () => {
 
-    const [viewallCurriculum,setViewallCurriculm] = useState([])
+    const [viewallCurriculum,setViewallCurriculm] = useState([]);
+
     useEffect(()=>{
         getData();
 
     },[]
     )
+
     const getData=()=>{
-        axios.get("http://localhost:3005/pastlistbyfaculty")
-        .then(
-            (response)=>{
-                
-                setViewallCurriculm(response.data)
-            }
+      
+      axios.get('http://localhost:3005/pastlistbyfaculty')
+      .then(
+          (response)=>{
+              
+              setViewallCurriculm(response.data)
+              
+          }
 
-        ).catch(
-            (error)=>{
-                console.log("error in loading data"+error);
+      ).catch(
+          (error)=>{
+              console.log("error in loading data"+error);
 
-            }
-        )
+          }
+      )
     }
 
 
@@ -36,6 +40,7 @@ const ViewallFaculty = () => {
                 <table className="table">
                   <thead>
                     <tr>
+                      <th scope="col" style={{color:"#1E90FF",fontWeight:"bolder",fontSize:"18px"}}> Title</th>
                       <th scope="col" style={{color:"#1E90FF",fontWeight:"bolder",fontSize:"18px"}}>Past Curricculum</th>
                       <th scope="col" style={{color:"#1E90FF",fontWeight:"bolder",fontSize:"18px"}}>Download</th>
                     </tr>
@@ -44,8 +49,9 @@ const ViewallFaculty = () => {
                     {viewallCurriculum.map(
                       (value,index)=>{
                         return <tr>
+                          <td>{value.title}</td>
                           <td>{value.pdfpath}</td>
-                          <td><button type="button" class="btn btn-primary">DOWNLOAD</button></td>
+                          <td><button type="button" className="btn btn-primary">DOWNLOAD</button></td>
                    
                         </tr> 
                       }

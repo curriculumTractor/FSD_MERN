@@ -151,7 +151,7 @@ app.post('/addrequirement',upload.single("photo"), async (req, res) => {
 // faculty listrequirement
 app.get('/reqlist', async (req, res) => {
     try {
-        let list = await ReqModel.find({ "status": "notrespond" }).sort({"_id":-1})
+        let list = await ReqModel.find({ "status": "notrespond" })
 
         res.send(list)
 
@@ -163,13 +163,15 @@ app.get('/reqlist', async (req, res) => {
 // display past curriculum by admin
 app.get('/pastlist',async (req, res) => {
     try {
-        let curr = await CurModel.find({"status":"approved"})
+        let curr = await CurModel.find({ "status": "approved" })
         res.send(curr)
 
     } catch (error) {
         console.log(error)
     }
 })
+
+
 
 
 // display past curriculum by faculty

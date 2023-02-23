@@ -4,11 +4,29 @@ const Schema = Mongoose.Schema
 const SavCurSchema = new Schema({
     
     pdfpath: {
-        type : String 
+        type : String,
+         
     },
     comments: {
         type: String,
+        
      },
+     title: {
+        type : String ,
+        
+    },
+    area: {
+        type : String ,
+        
+    },
+    institution: {
+        type : String ,
+        
+    },
+    category: {
+        type : String ,
+        
+    },
     status: {
         type: String,
         default: "approved"  

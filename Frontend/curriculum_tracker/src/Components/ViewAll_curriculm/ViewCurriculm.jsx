@@ -13,19 +13,21 @@ const ViewCurriculm = () => {
         )
 
         const getData=()=>{
-            axios.get("http://localhost:3005/pastlist")
+            
+            axios.get('http://localhost:3005/pastlist')
             .then(
                 (response)=>{
                     
                     setViewCurriculm(response.data)
                     
                 }
-    
+      
             ).catch(
                 (error)=>{
                     console.log("error in loading data"+error);
-    
-            })
+      
+                }
+            )
         }
 
   return (
@@ -37,6 +39,7 @@ const ViewCurriculm = () => {
                    <table className="table">
                         <thead>
                             <tr>
+                                <th scope="col" style={{color:"#1E90FF",fontWeight:"bolder",fontSize:"18px"}}> Title</th>
                                 <th scope="col" style={{color:"#1E90FF",fontWeight:"bolder",fontSize:"18px"}}>Past Curricculum</th>
                                 <th scope="col" style={{color:"#1E90FF",fontWeight:"bolder",fontSize:"18px"}}>Download</th>
                             </tr>
@@ -45,8 +48,9 @@ const ViewCurriculm = () => {
                             {viewCurriculum.map(
                                 (value,index)=>{
                                 return <tr>
+                                    <td>{value.title}</td>
                                     <td>{value.pdfpath}</td>
-                                    <td><button type="button" class="btn btn-primary">DOWNLOAD</button></td>
+                                    <td><button type="button" className="btn btn-primary">DOWNLOAD</button></td>
                                 </tr> 
                                 }
                             )}

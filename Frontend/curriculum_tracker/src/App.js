@@ -39,6 +39,7 @@ function App() {
         <Route path='/curriculumdisplay' exact element={<CurriculumDisplay/>} />
         <Route path='/viewcurriculm' exact element={<ViewCurriculm/>} />
         <Route path='/requirement' exact element={<RequirementForm/>} />
+        
 
 
         <Route path='/user' exact element={<User />} />

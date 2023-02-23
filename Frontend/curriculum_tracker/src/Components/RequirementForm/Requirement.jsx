@@ -23,9 +23,9 @@ const Requirement = () => {
         
         setReqname(value)
         setArea(value)
-         setInstitution(value)
-         setCatagory(value)
-         setHours(value)
+        setInstitution(value)
+        setCatagory(value)
+        setHours(value)
         
     }
        

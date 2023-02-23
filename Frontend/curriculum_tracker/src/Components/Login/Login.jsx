@@ -46,8 +46,8 @@ const Login = () => {
     const onChange = (e) => {
         setCredentials(
             { ...credentials,
-                 [e.target.name]: e.target.value 
-                });
+                [e.target.name]: e.target.value 
+        });
     }
 	
   return (
@@ -82,21 +82,21 @@ const Login = () => {
                         required
                         className={styles.input}
 				    />
-				<button type="submit" className={styles.green_btn} >
-					Sign In
-				</button>
-			</form>
-		</div>
-		<div className={styles.right}>
-			<h1>New Here ?</h1>
-			<Link to="/signup">
-				<button type="button" className={styles.white_btn} >
-					Sing Up
-				</button>
-			</Link>
-		</div>
-	</div>
-</div>
+				    <button type="submit" className={styles.green_btn} >
+					    Sign In
+				    </button>
+			    </form>
+		    </div>
+		    <div className={styles.right}>
+			    <h1>New Here ?</h1>
+			    <Link to="/signup">
+				    <button type="button" className={styles.white_btn} >
+					    Sign Up
+				    </button>
+			    </Link>
+		    </div>
+	    </div>
+    </div>
   )
 }
 

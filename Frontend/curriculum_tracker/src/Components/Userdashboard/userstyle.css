@@ -12,7 +12,7 @@ container-fluid{
   }
 
 .navbg{
-  background-color: #39d1a6;
+  background-color: #1E90FF;
   
 }
 .nav-item a{
@@ -32,7 +32,7 @@ container-fluid{
   
 }
 
-
+ 
 .userleft{
   min-height: 500px;
   background-color: #f0f0f0;
@@ -44,7 +44,7 @@ container-fluid{
   color: #f9f0f0;
  }
  .accordion-button:hover{
-  background-color: #aee6cb;
+  background-color: #1E90FF;
   color: #eefed4;
  }
 
@@ -117,7 +117,7 @@ ul {
 
   .footeruser{
     text-align: center;
-    background-color: #56b1a8;
+    background-color: #1E90FF;
     color: #f9f0f0;
     margin: 0;
   }
@@ -239,7 +239,7 @@ ul {
 }
  
 .sidebar a.active {
-  background-color: #58d4be;
+  background-color: #1E90FF;
   color: white;
 }
 
@@ -284,7 +284,7 @@ div.content {
   margin-top: 2em;
 }
 .btnupload{
-  background-color: #118262;
+  background-color: #1E90FF;
   border-radius: 3px;
   width: 100px;
   padding: 5px;
@@ -292,7 +292,7 @@ div.content {
   color: #f0f0f0;
 }
 .btnupload:hover{
-  background-color: #1ca57e;
+  background-color: #1E90FF;
 }
 .uploadbox p{
   text-align: center;

@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 import axios from 'axios'
 import styles from "./styles.module.css"
 
 const Login = () => {
-
-	
 
 	const [credentials, setCredentials] = useState(
         {
@@ -14,9 +13,8 @@ const Login = () => {
          role: ""
         })
         let role = ["admin", "user"]
-       const navigate =useNavigate();
+        const navigate =useNavigate();
      
-
         const handleSubmit = async (e) => {
             e.preventDefault();
             const response = await fetch("http://localhost:3005/login", {
@@ -44,29 +42,12 @@ const Login = () => {
                 toast.error("invalid credentials");
             }
         }
-        //  if  (json.success && role === "admin") {
-        //     //save the auth token and redirect
-        //     localStorage.setItem('token', json.token);
-        //     navigate("/admin");
-        //     toast.success("login Successfully");
-        // }
-        // else if  (json.success && role === "user") {
-        //      //save the auth token and redirect
-        //      localStorage.setItem('token', json.token);
-        //      navigate("/user");
-        //     //  toast.success("login Successfully")
-        // }
-         
-    //     else{
-    //         toast.error("invalid credentials");
-    //     }
-    // }
-
+       
     const onChange = (e) => {
         setCredentials(
             { ...credentials,
-                 [e.target.name]: e.target.value 
-                });
+                [e.target.name]: e.target.value 
+        });
     }
 	
   return (

@@ -2,13 +2,14 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #f0f0f0;
+   
     }
 
     body::-webkit-scrollbar{
       display: none;
     }
   .navbg{
-    background-color: #222827;
+    background-color:  #1E90FF;
     
   }
 
@@ -32,8 +33,9 @@
   
   
   .userleft{
-    min-height: 500px;
+    min-height: 600px;
     background-color: #f0f0f0;
+  
    }
   
    .userright h5{
@@ -44,7 +46,7 @@
     color: #f9f0f0;
    }
    .accordion-button:hover{
-    background-color: #aee6cb;
+    background-color:#1E90FF;
     color: #eefed4;
    }
   
@@ -117,7 +119,7 @@
   
     .footeruser{
       text-align: center;
-      background-color: #96dfd8;
+      background-color: #1E90FF;
       color: #f9f0f0;
       margin: 0;
     }

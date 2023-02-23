@@ -2,15 +2,18 @@ import React,{useState}from 'react'
 import axios from 'axios';
 import './reqstyles.css'
 import Admin_navbar from '../Admindashboard/Admin_navbar';
+
+
 const Requirement = () => {
      
-    
-     const [reqname,setReqname]=useState("");
-     const [area,setArea]=useState("");
-     const [institution,setInstitution]=useState("");
-     const [catagory,setCatagory]=useState("");
-     const [hours,setHours]=useState("");
-     const [file,setFile]=useState("")
+    const [reqname,setReqname]=useState("");
+    const [area,setArea]=useState("");
+    const [institution,setInstitution]=useState("");
+    const [catagory,setCatagory]=useState("");
+    const [hours,setHours]=useState("");
+    const [file,setFile]=useState("")
+
+    const navigate= useNavigate();
     
     
     const setData=(e)=>{
@@ -19,21 +22,16 @@ const Requirement = () => {
         
         setReqname(value)
         setArea(value)
-         setInstitution(value)
-         setCatagory(value)
-         setHours(value)
+        setInstitution(value)
+        setCatagory(value)
+        setHours(value)
         
     }
        
-    
-    
-    
     const setimgfile=(e)=>{
           console.log(e.target.files[0]);
           setFile(e.target.files[0]);
     }
-
-    //addrequirement details
 
     const addRequirement=async(e)=>{
         e.preventDefault();
@@ -54,6 +52,7 @@ const Requirement = () => {
         console.log(res);
         if (res.statusText==="OK") {
             alert("Requirement successfully Added")
+            navigate('/requirement')
         }    
     }
 

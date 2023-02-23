@@ -1,12 +1,32 @@
+
 .requirebox{
-    background-color: rgb(220, 233, 245);
-    align-items: stretch;
-    
-    
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #fbf9f9fb;
+  width: 75%;
+  margin: 0 auto;
+  padding: 40px;
+  font-size: 18px;
+ }
+.requirebox input{
+  width: 60%;
+}
+.requirebox select{
+  width: 60%;
 }
 .reqlist{
   align-items: center;
   padding-top: 6%;
   padding-left: 10%;
   width: 50%;
+}
+.btn-add{
+  width: 100px;
+  border-radius: 3px;
+  background-color: #058b43;
+  color: #f0f8ff;
+  border: none;
+  padding: 3px;
+}
+.btn-add:hover{
+  background-color: #09a853;
 }

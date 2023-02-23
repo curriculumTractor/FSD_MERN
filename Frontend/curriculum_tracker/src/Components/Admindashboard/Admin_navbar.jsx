@@ -1,9 +1,10 @@
 import React from 'react'
+import './adminstyle.css'
 
 const Admin_navbar = () => {
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbg" style={{ backgroundColor:"#1E90FF"}}>
+            <nav class="navbar navbar-expand-lg navbg" >
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -18,7 +19,7 @@ const Admin_navbar = () => {
                                 <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-user"></i></a>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
-                                    <li><a class="dropdown-item" href="/admin"style={{color:"#2b2c2c"}}>Dashbord</a></li>
+                                    <li><a class="dropdown-item" href="/admin" style={{color:"#2b2c2c"}}>Dashbord</a></li>
                                     <li><a class="dropdown-item" href="/aprofile" style={{color:"#2b2c2c"}}>My Profile</a></li>
                                     <li><a class="dropdown-item" href="/admin"style={{color:"#2b2c2c"}}>Settings</a></li>
                                     <li><a class="dropdown-item" href="/"style={{color:"#2b2c2c"}}>Logout</a></li>

@@ -36,8 +36,8 @@ const ViewallFaculty = () => {
                 <table className="table">
                   <thead>
                     <tr>
-                      <th scope="col">Past Curricculum</th>
-                      <th scope="col">Download</th>
+                      <th scope="col" style={{color:"#1E90FF",fontWeight:"bolder",fontSize:"18px"}}>Past Curricculum</th>
+                      <th scope="col" style={{color:"#1E90FF",fontWeight:"bolder",fontSize:"18px"}}>Download</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -45,7 +45,7 @@ const ViewallFaculty = () => {
                       (value,index)=>{
                         return <tr>
                           <td>{value.pdfpath}</td>
-                          <td><button>DOWNLOAD</button></td>
+                          <td><button type="button" class="btn btn-primary">DOWNLOAD</button></td>
                    
                         </tr> 
                       }

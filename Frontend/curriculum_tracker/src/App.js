@@ -9,13 +9,14 @@ import Admin from './Components/Admindashboard/Admin';
 import User from './Components/Userdashboard/User';
 import Profile from './Components/Profile/Profile';
 import Aprofile from './Components/Profile/Aprofile';
-import Requirement from './Components/RequirementForm/Requirement';
+
 import RecieveReqrmnt from './Components/Userdashboard/Requirement/RecieveReqrmnt';
 import Search from './Components/Search/Search';
 import CurriculumDisplay from './Components/Curriculum/CurriculumDisplay';
 import ViewCurriculm from './Components/ViewAll_curriculm/ViewCurriculm';
 import ViewallFaculty from './Components/ViewAll_curriculm/ViewallFaculty';
 import Fileupload from './Components/Userdashboard/FileUplod/Fileupload';
+import RequirementForm from './Components/RequirementForm/RequirementForm';
 
 
 
@@ -34,9 +35,10 @@ function App() {
         
         <Route path='/admin' exact element={<Admin />} />
         <Route path='/aprofile' exact element={<Aprofile />} />
-        <Route path='/requirement' exact element={<Requirement />} />
+     
         <Route path='/curriculumdisplay' exact element={<CurriculumDisplay/>} />
         <Route path='/viewcurriculm' exact element={<ViewCurriculm/>} />
+        <Route path='/requirement' exact element={<RequirementForm/>} />
 
 
         <Route path='/user' exact element={<User />} />

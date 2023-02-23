@@ -48,7 +48,7 @@ const Fileupload = () => {
         <div className="row g-3">
             <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <section className='uploadbox'> 
-              <h4 style={{textAlign:"center"}}>Upload Your Curriculum </h4>  
+              <h4 style={{textAlign:"center",color:"#1E90FF"}}>Upload Your Curriculum </h4>  
               <div class="mb-3 row" style={{marginTop:"5%"}}>
                 <label for="inputPassword" class="col-sm-2 col-form-label">Title</label>
                 <div class="col-sm-6">
@@ -75,11 +75,11 @@ const Fileupload = () => {
                     <select class="form-select" aria-label="Default select example">
                       <option selected>Select</option>
                       <option value="1">Retail</option>
-                      <option value="2">Academin</option>
+                      <option value="2">Academic</option>
                       <option value="3">Corporate</option>
                     </select>
                   </div>
-                </div> 
+              </div> 
               <div class="mb-3 row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Institution</label>
                 <div class="col-sm-6">

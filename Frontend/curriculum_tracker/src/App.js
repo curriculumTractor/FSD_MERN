@@ -35,7 +35,6 @@ function App() {
         
         <Route path='/admin' exact element={<Admin />} />
         <Route path='/aprofile' exact element={<Aprofile />} />
-     
         <Route path='/curriculumdisplay' exact element={<CurriculumDisplay/>} />
         <Route path='/viewcurriculm' exact element={<ViewCurriculm/>} />
         <Route path='/requirement' exact element={<RequirementForm/>} />

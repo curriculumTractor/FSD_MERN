@@ -3,6 +3,7 @@ import {useState,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import './curriculumdisplay.css'
+import PDFViewer from 'pdf-viewer-reactjs'
 import Admin_navbar from '../Admindashboard/Admin_navbar';
 
 
@@ -12,6 +13,7 @@ const CurriculumDisplay = () => {
   var [id,setId] = useState(0);
   const navigate =useNavigate();
   
+
   useEffect(() => {
     displayCurriculum();
     },[]
@@ -73,8 +75,10 @@ const CurriculumDisplay = () => {
   const downloadCurriculum=()=>{
     axios.get(`http://localhost:3005/download/${id}`)
       .then((response)=>{
+        
         console.log(response.data);
         setCurriculum(response.data);
+        
         alert("Successfully downloaded");
         navigate('/curriculumdisplay')
        }) 
@@ -84,12 +88,15 @@ const CurriculumDisplay = () => {
         })
   }
 
+ 
+  
+
   return (
     <div>
       <Admin_navbar/>
       <div className='container curriculumlist'>
         <div className="row curview">
-        <h2 style={{textAlign:"center",color:"#1E90FF",marginTop:"12px",marginBottom:"15px"}}>NEW CURRICULUM</h2> 
+        <h2 style={{textAlign:"center",color:"#1E90FF",marginTop:"4px",marginBottom:"4px"}}>NEW CURRICULUM</h2> 
             <div className="col col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
               <div className="row g-3">
                 <div className="col col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -113,7 +120,7 @@ const CurriculumDisplay = () => {
                             <td>{value.institution}</td>
                             <td>{value.comments}</td>
                             <td>{value.pdfpath}</td>
-                            <td><button type="button" class="btn btn-primary" onClick={downloadCurriculum}>DOWNLOAD</button></td>
+                            <td><button type="button" class="btn btn-primary" onClick= {downloadCurriculum} >DOWNLOAD</button></td>
                             <td><button  type="button" class="btn btn-success" onClick={UpdateCurriculum}>APPROVE</button></td>
                             <td><button type="button" class="btn btn-danger" onClick={DeleteCurriculum}>REJECT</button></td>
                           </tr>

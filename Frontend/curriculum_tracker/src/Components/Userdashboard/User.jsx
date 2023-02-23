@@ -16,7 +16,7 @@ const User = () => {
                   <a href="/uprofile"><i class="fa-solid fa-user"></i>&nbsp;&nbsp; My Profile</a>
                   <a href="/recvrqrmnt"><i class="fa-solid fa-message"></i>&nbsp;&nbsp; View Requirements</a>
                   <a href="/viewallfaculty"><i class="fa-solid fa-sheet-plastic"></i>&nbsp;&nbsp; Curriculum</a>
-                  <span className='greenbtn'><a href='/fileupload'><button className='btn btn-success'>Upload Curriculum</button></a></span>
+                  <span className='greenbtn'><a href='/uploadfile'><button className='btn btn-success'>Upload Curriculum</button></a></span>
                 </div>
               </div>
               <div className="col col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">

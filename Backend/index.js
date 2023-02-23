@@ -171,6 +171,7 @@ app.get('/pastlist',async (req, res) => {
     }
 })
 
+
 // display past curriculum by faculty
 app.get('/pastlistbyfaculty',async (req, res) => {
     try {
@@ -240,6 +241,10 @@ app.get('/download/:id',(req,res)=>{
          }
     })
 })
+
+
+//download
+
 
 
 

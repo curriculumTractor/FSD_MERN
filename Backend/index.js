@@ -69,10 +69,7 @@ app.post("/login",(req,res)=>{
        var password=req.body.password;
        var role=req.body.role;
         
-    //    if(email=="admin@gmail.com",role=="admin"){
-    //     res.json({message :"admin login"})
-    //    }
-    //     else{
+    
             UserModel.find({ email : email },(err,data)=>{
             if(data.length>0){
                
@@ -105,7 +102,7 @@ app.post("/login",(req,res)=>{
     
    })
 
-// Requirement BY ADMIN
+
 //FILE UPLOAD
 const fileStorageEngine = Multer.diskStorage({
     destination: (req, file, cb) =>{
@@ -143,16 +140,7 @@ app.post('/addrequirement',upload.single("photo"), async (req, res) => {
         });
             
             
-        // let requirements = await ReqModel.findOne({ reqname: req.body.reqname })
-        // if (!requirements) {
-        //     const newReq = new ReqModel(data1);
-        //     const saveReq = await newReq.save();
-        //     res.json(saveReq);
-        //     console.log(saveReq)
-        // }
-        // else {
-        //     res.json({ message: "Requirement already added" });
-        // }
+       
     } catch (error) {
         console.log(error)
 
@@ -210,36 +198,7 @@ const storage = Multer.diskStorage({
 // path
 const pathh = path.resolve(__dirname,'public');
 app.use(Express.static(pathh));
-
-
-//  app.post('/curriculumupload',Mul.single('pdf'),(req,res)=>{
-//     let cur =  req.file.originalname;
-//     let comments = req.body.comments
-//     let title = req.body.title
-//     let area = req.body.area
-//     let category = req.body.category
-//     let institution = req.body.institution
-    
-//     let temp = new CurModel({
-//         pdfpath: cur,
-//         comments: comments,
-//         title: title,
-//         area:area,
-//         category:category,
-//         institution:institution,
-
-//     })
-//     temp.save((err,data)=>{
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             res.json({"status":"success", "data":data})
-//         }
-//     })
-// })
-
-
-   
+  
 // new upload
     app.post('/curriculumupload',Mul.single('pdf'),(req,res)=>{
         let cur = 'uploads/' + req.file.originalname;

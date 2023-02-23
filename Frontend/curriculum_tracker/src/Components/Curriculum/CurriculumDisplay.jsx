@@ -89,11 +89,11 @@ const CurriculumDisplay = () => {
       <Admin_navbar/>
       <div className='container curriculumlist'>
         <div className="row curview">
-        <h2 style={{textAlign:"center",color:"#1E90FF",marginTop:"15px",marginBottom:"15px"}}>NEW CURRICULUM</h2> 
+        <h2 style={{textAlign:"center",color:"#1E90FF",marginTop:"12px",marginBottom:"15px"}}>NEW CURRICULUM</h2> 
             <div className="col col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
               <div className="row g-3">
                 <div className="col col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                  <table class="table table-success table-striped curriculumtablelist" >
+                  <table className="table table-success table-striped curriculumtablelist" >
                     <thead>
                       <tr className="bg-dark text-white" class="bg-gray-50 currrow">
                         <th scope="col">Name</th>
@@ -113,9 +113,9 @@ const CurriculumDisplay = () => {
                             <td>{value.institution}</td>
                             <td>{value.comments}</td>
                             <td>{value.pdfpath}</td>
-                            <td><button onClick={downloadCurriculum}>DOWNLOAD</button></td>
-                            <td><button onClick={UpdateCurriculum}>APPROVE</button></td>
-                            <td><button onClick={DeleteCurriculum}>REJECT</button></td>
+                            <td><button type="button" class="btn btn-primary" onClick={downloadCurriculum}>DOWNLOAD</button></td>
+                            <td><button  type="button" class="btn btn-success" onClick={UpdateCurriculum}>APPROVE</button></td>
+                            <td><button type="button" class="btn btn-danger" onClick={DeleteCurriculum}>REJECT</button></td>
                           </tr>
                        }
                       )}

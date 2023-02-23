@@ -1,5 +1,6 @@
 import React from 'react'
 import Admin_navbar from './Admin_navbar'
+import './adminstyle.css'
 
 
 const Admin = () => {
@@ -11,8 +12,8 @@ const Admin = () => {
           <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div className="row">
               <div className="col col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
-                <div class="sidebar">
-                  <a class="active" href="/admin" style={{ backgroundColor:" #f0f0f0", color:"#1E90FF",fontWeight:"bold"}}> DASHBOARD</a>
+                <div className="sidebar">
+                  <a className="active" href="/admin" style={{ backgroundColor:" #f0f0f0",color:"#1E90FF",fontWeight:"bold"}}> DASHBOARD</a>
                   <a href="/aprofile"><i class="fa-solid fa-user"></i>&nbsp;&nbsp; My Profile</a>
                   <a href="/requirement"><i class="fa-solid fa-message"></i>&nbsp;&nbsp; Requirements</a>
                   <a href="/viewcurriculm"><i class="fa-solid fa-sheet-plastic"></i>&nbsp;&nbsp; Curriculum</a>
@@ -89,7 +90,7 @@ const Admin = () => {
         </div>
       </div>
       <div className="row g-3" >
-        <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 footeruser" style={{ backgroundColor:"#1E90FF"}}>
+        <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 footeruser" >
           <p>Copyright © 2023 ICT Academy Curriculum Tracker. All Rights Reserved</p>
         </div>
       </div>

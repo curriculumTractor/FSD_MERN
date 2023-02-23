@@ -80,24 +80,23 @@ const Fileupload = () => {
                     </select>
                   </div>
                 </div> 
-             <div class="mb-3 row">
+              <div class="mb-3 row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Institution</label>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="inputDesig" onChange={(e)=>setInstitution(e.target.value)} placeholder='Enter Instituion name'/>
                 </div>
               </div>
-
-            <label for="floatingTextarea2">Message</label>
-            <textarea class="form-control" onChange={(e)=>setComments(e.target.value)} placeholder="Leave a message here" id="floatingTextarea2" style={{height: "100px"}}></textarea>
-            <br/>
-            <form onSubmit={uploadFile}>
-            <p><input type="file" name="pdf" onChange={getFile} required /></p>
-            <p><input className='btnupload' type='submit' name="upload" value="Upload"/></p>
-            </form>
+              <label for="floatingTextarea2">Message</label>
+              <textarea class="form-control" onChange={(e)=>setComments(e.target.value)} placeholder="Leave a message here" id="floatingTextarea2" style={{height: "100px"}}></textarea>
+              <br/>
+              <form onSubmit={uploadFile}>
+                <p><input type="file" name="pdf" onChange={getFile} required /></p>
+                <p><input className='btnupload' type='submit' name="upload" value="Upload"/></p>
+              </form>
             </section>
-            </div>
+          </div>
         </div>
-    </div>
+      </div>
   )
 }
 

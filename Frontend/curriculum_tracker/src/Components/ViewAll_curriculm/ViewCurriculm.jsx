@@ -25,48 +25,37 @@ const ViewCurriculm = () => {
                 (error)=>{
                     console.log("error in loading data"+error);
     
-                }
-            )
-
+            })
         }
 
   return (
     <div>
-        
-        <Admin_navbar/>
-           
-                   <div className="container">
-                   
-                        <div className="row">
-                   <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+    <Admin_navbar/>
+        <div className="container">
+            <div className="row">
+                <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                    <table className="table">
-             <thead>
-               <tr>
-               
-                 <th scope="col">Past Curricculum</th>
-                 <th scope="col">Download</th>
-                 
-               </tr>
-             </thead>
-             <tbody>
-              {viewCurriculum.map(
-               (value,index)=>{
-                  return <tr>
-                    
-                   <td>{value.pdfpath}</td>
-                   <td><button>DOWNLOAD</button></td>
-                   
-                </tr> 
-               }
-              )}
-              
-             </tbody>
-           </table>
-                   </div>
-               </div>
-              </div>
-           
+                        <thead>
+                            <tr>
+                                <th scope="col">Past Curricculum</th>
+                                <th scope="col">Download</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {viewCurriculum.map(
+                                (value,index)=>{
+                                return <tr>
+                                    <td>{value.pdfpath}</td>
+                                    <td><button>DOWNLOAD</button></td>
+                                </tr> 
+                                }
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
+    </div>
   )
 }
 

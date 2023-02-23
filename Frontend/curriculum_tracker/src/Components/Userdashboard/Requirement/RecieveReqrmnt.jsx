@@ -41,7 +41,7 @@ const RecieveReqrmnt = () => {
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <table className="table">
                         <thead>
-                            <tr>
+                            <tr style={{color:"#1E90FF",fontWeight:"bolder",fontSize:"16px"}}>
                                 <th scope="col">Name of Requirement</th>
                                 <th scope="col">Area of Training</th>
                                 <th scope="col">Institution</th>

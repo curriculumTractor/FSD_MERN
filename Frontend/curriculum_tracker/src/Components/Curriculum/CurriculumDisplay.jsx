@@ -89,7 +89,7 @@ const CurriculumDisplay = () => {
       <Admin_navbar/>
       <div className='container curriculumlist'>
         <div className="row curview">
-            <h1 style={{textAlign:"center"}}>CURRICULUMS</h1> 
+        <h2 style={{textAlign:"center",color:"#1E90FF",marginTop:"15px",marginBottom:"15px"}}>NEW CURRICULUM</h2> 
             <div className="col col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
               <div className="row g-3">
                 <div className="col col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">

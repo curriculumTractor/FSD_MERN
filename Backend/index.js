@@ -68,6 +68,8 @@ app.post("/login",(req,res)=>{
        var email =req.body.email;
        var password=req.body.password;
        var role=req.body.role;
+       
+     
         
     
             UserModel.find({ email : email },(err,data)=>{
@@ -95,7 +97,7 @@ app.post("/login",(req,res)=>{
                res.json({"Status":"Failed to Login","data":"Invalid Email id"})
            }
        })
-//    }
+    
 }catch(error){
        console.log(error)
    }
@@ -163,7 +165,7 @@ app.get('/reqlist', async (req, res) => {
 // display past curriculum by admin
 app.get('/pastlist',async (req, res) => {
     try {
-        let curr = await CurModel.find({ "status": "approved" })
+        let curr = await CurModel.find ({ "status": "approved" })
         res.send(curr)
 
     } catch (error) {
@@ -177,7 +179,7 @@ app.get('/pastlist',async (req, res) => {
 // display past curriculum by faculty
 app.get('/pastlistbyfaculty',async (req, res) => {
     try {
-        let curr = await CurModel.find({"status":"approved"})
+        let curr = await CurModel.find ({"status":"approved"})
         res.send(curr)
 
     } catch (error) {
@@ -230,10 +232,10 @@ app.use(Express.static(pathh));
 // Download curriculum by admin
 app.get('/download/:id',(req,res)=>{
     // var hex = /[0-9A-Fa-f]{6}/g;
-    // var id ;
+    var id =req.params.id;
     // id = (hex.test(id))? ObjectId(_id) : id;
 
-    CurModel.findById({_id:req.params.id},(err,data)=>{
+    CurModel.findById({_id:id},(err,data)=>{
          if(err){
              console.log(err)
          }
@@ -322,6 +324,7 @@ app.delete('/curricul/delete/:id',(req,res)=>{
     )
 })
 
+
 // approve curriculum
 app.post('/curupdate',(req,res)=>{
     let data =  req.body
@@ -341,6 +344,10 @@ app.post('/curupdate',(req,res)=>{
 app.get('/approvedlist',(req,res)=>{
     console.log("data")
 })
+
+
+
+
 // display curriculum by status
 app.get("/curriculum", async (req, res) => {
     try {

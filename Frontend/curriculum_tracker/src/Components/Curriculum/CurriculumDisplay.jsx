@@ -10,7 +10,7 @@ import Admin_navbar from '../Admindashboard/Admin_navbar';
 const CurriculumDisplay = () => {
 
   var [curriculum,setCurriculum]=useState([])
-  var [id,setId] = useState(0);
+  var [id,setId] = useState();
   const navigate =useNavigate();
   
 
@@ -59,6 +59,7 @@ const CurriculumDisplay = () => {
   }
 
   const DeleteCurriculum=()=>{
+    
     axios.delete(`http://localhost:3005/curricul/delete/${id}`)
       .then((response)=>{
         console.log(response.data);
@@ -73,7 +74,15 @@ const CurriculumDisplay = () => {
   }
   
   const downloadCurriculum=()=>{
-    axios.get(`http://localhost:3005/download/${id}`)
+    const userData={
+
+      "file":'',
+      
+      "id":''
+
+    }
+
+    axios.get(`http://localhost:3005/download/${id}`,userData)
       .then((response)=>{
         
         console.log(response.data);
@@ -120,7 +129,7 @@ const CurriculumDisplay = () => {
                             <td>{value.institution}</td>
                             <td>{value.comments}</td>
                             <td>{value.pdfpath}</td>
-                            <td><button type="button" class="btn btn-primary" onClick= {downloadCurriculum} >DOWNLOAD</button></td>
+                            <td><button type="button" class="btn btn-primary" onClick={downloadCurriculum} >DOWNLOAD</button></td>
                             <td><button  type="button" class="btn btn-success" onClick={UpdateCurriculum}>APPROVE</button></td>
                             <td><button type="button" class="btn btn-danger" onClick={DeleteCurriculum}>REJECT</button></td>
                           </tr>

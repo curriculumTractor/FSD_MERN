@@ -168,7 +168,7 @@ const Signup = () => {
            					{errors.confirmPassword?.type === "maxLength" &&
             					"Entered password is more than 10 characters"}
           				</error>
-						<button type="submit" className={styles.green_btn} onClick={()=>{signUpData()}} >
+						<button type="submit" className={styles.green_btn}  >
 							Sign Up
 						</button>
 					</form>

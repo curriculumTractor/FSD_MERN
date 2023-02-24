@@ -121,7 +121,7 @@ const UploadFile = () => {
                                 </div>
                                 <hr className="mx-n3"/>
                                 <div className="px-5 py-4">
-                                    <button type="submit" className="btn btn-primary btn-lg" onClick={uploadFile} >Add Requirement</button>
+                                    <button type="submit" className="btn btn-primary btn-lg" onClick={uploadFile} >Upload Curriculum</button>
                                 </div>
                             </div>
                         </div>

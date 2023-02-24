@@ -32,7 +32,7 @@ const CurriculumDisplay = () => {
 
     }
 
-    axios.post('http://localhost:3005/displaycurriculum',userData)
+    axios.post('/api/displaycurriculum',userData)
       .then((response)=>{
         console.log(response.data)
         setCurriculum(response.data)
@@ -46,7 +46,7 @@ const CurriculumDisplay = () => {
 
 
   const UpdateCurriculum=()=>{
-    axios.post('http://localhost:3005/curupdate')
+    axios.post('/api/curupdate')
       .then((response)=>{
         console.log(response.data);
         setCurriculum(response.data);
@@ -60,7 +60,7 @@ const CurriculumDisplay = () => {
 
   const DeleteCurriculum=()=>{
     
-    axios.delete(`http://localhost:3005/curricul/delete/${id}`)
+    axios.delete(`/api/curricul/delete/${id}`)
       .then((response)=>{
         console.log(response.data);
         setCurriculum(response.data);
@@ -82,7 +82,7 @@ const CurriculumDisplay = () => {
 
     }
 
-    axios.get(`http://localhost:3005/download/${id}`,userData)
+    axios.get(`/api/download/${id}`,userData)
       .then((response)=>{
         
         console.log(response.data);

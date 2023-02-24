@@ -22,7 +22,7 @@ const Signup = () => {
 	const signUpData =()=>{
 		
 		console.log(data)
-		axios.post("http://localhost:3005/signup",data)
+		axios.post("/api/signup",data)
 		.then((response)=>{
 			
 			console.log(response.data)

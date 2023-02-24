@@ -14,7 +14,7 @@ const ViewCurriculm = () => {
 
         const getData=()=>{
             
-            axios.get('http://localhost:3005/pastlist')
+            axios.get('/api/pastlist')
             .then(
                 (response)=>{
                     

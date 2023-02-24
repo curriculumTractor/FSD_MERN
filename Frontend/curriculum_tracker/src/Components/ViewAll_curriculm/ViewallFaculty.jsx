@@ -14,7 +14,7 @@ const ViewallFaculty = () => {
 
     const getData=()=>{
       
-      axios.get('http://localhost:3005/pastlistbyfaculty')
+      axios.get('/api/pastlistbyfaculty')
       .then(
           (response)=>{
               

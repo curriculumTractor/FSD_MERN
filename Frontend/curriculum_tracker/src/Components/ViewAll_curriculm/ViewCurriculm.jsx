@@ -50,7 +50,7 @@ const ViewCurriculm = () => {
                                 return <tr>
                                     <td>{value.title}</td>
                                     <td>{value.pdfpath}</td>
-                                    <td><button type="button" className="btn btn-primary">DOWNLOAD</button></td>
+                                    <td><button  className="btn btn-primary" type="button">DOWNLOAD</button></td>
                                 </tr> 
                                 }
                             )}
